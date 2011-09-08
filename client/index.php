@@ -229,6 +229,8 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 							</tr>
 						</table>
 						
+						<p>So that others can make free use of this ground-breaking development as the basis for new applications, the Remix source code has been made available on <a href="https://github.com/brianchirls/Europeana-Remix">GitHub</a>, a collaborative code repository for programmers.</p>
+						
 						<h3>Project Partners</h3>
 						<h4>Europeana Foundation (<a href="http://www.europeana.eu" target="_new">www.europeana.eu</a>)</h4>
 						<p>A partnership of European cultural heritage associations that have joined forces to bring together the digitised content of Europe’s galleries, libraries, museums, archives and audiovisual archives. Currently Europeana gives integrated access to 20 million books, films, paintings, museum objects and archival documents from some 1500 content providers. The content is drawn from every European member state and the interface is in 27 European languages. Europeana receives its main funding from the European Commission.</p>
@@ -284,6 +286,8 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 								<td>4.0+</td>
 							</tr>
 						</table>
+						
+						<p>Um freie Benutzung dieser bahnbrechenden Entwicklung zu ermöglichen als die Basis für neue Anwendungen, ist die Remix-Quellcode zur Verfügung gestellt auf <a href="https://github.com/brianchirls/Europeana-Remix">GitHub</a>, ein gemeinsames Code-Repository für Programmierer.</p>
 						
 						<h3>Projektpartner</h3>
 						<h4>Europeana Foundation (<a href="http://www.europeana.eu" target="_new">www.europeana.eu</a>)</h4>
