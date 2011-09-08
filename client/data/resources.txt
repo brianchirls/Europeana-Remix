@@ -1,0 +1,721 @@
+{
+	"youtube": [
+		{
+			"start": 37,
+			"end": 42,
+			"url": "http://www.youtube.com/watch?v=c_cfGoOaXR8",
+			"left": "4%",
+			"top": "22%",
+			"width": "27%"
+		},
+		{
+			"start": 51,
+			"end": 55,
+			"url": "http://www.youtube.com/watch?v=_TTAA6_VAcg",
+			"left": "10%",
+			"top": "15%",
+			"width": "20%",
+			"fadeOut": 0
+		},
+		{
+			"start": 58,
+			"end": 62,
+			"url": "http://youtu.be/AyCzrWgwIBE",
+			"left": "70%",
+			"top": "50%",
+			"width": "20%"
+		},
+		{
+			"start": 76,
+			"end": 80,
+			"url": "http://www.youtube.com/watch?v=pg9yr9M6RVc",
+			"left": "70%",
+			"top": "50%",
+			"width": "20%"
+		},
+		{
+			"start": 86,
+			"end": 91,
+			"url": "http://www.youtube.com/watch?v=j7peTBVprtY",
+			"left": "70%",
+			"top": "50%",
+			"width": "20%",
+			"fadeOut": 0
+		},
+		{
+			"start": 88,
+			"end": 91,
+			"url": "http://www.youtube.com/watch?v=s5fFKsMj8KA",
+			"left": "70%",
+			"top": "20%",
+			"width": "20%",
+			"fadeOut": 0
+		},
+		{
+			"start": "2:27",
+			"end": "2:33",
+			"url": "http://www.youtube.com/watch?v=tKofBhr9oFM",
+			"left": "47%",
+			"top": "6%",
+			"width": "20%"
+		},
+		{
+			"start": "2:53",
+			"end": "3:00",
+			"url": "http://www.youtube.com/watch?v=uPM0AA3C22Y",
+			"left": "79%",
+			"top": "58%",
+			"width": "18%",
+			"fadeOut": 0
+		}
+	],
+	"wikipedia": [
+		{
+			"start": 28,
+			"end": 34,
+			"url": "http://en.wikipedia.org/wiki/L%C3%B6bau",
+			"left": "10%",
+			"top": "50%",
+			"width": "20%"
+		},
+		{
+			"start": 63,
+			"end": 68,
+			"url": "http://en.wikipedia.org/wiki/St_John%27s_College,_Oxford",
+			"left": "10%",
+			"top": "50%",
+			"width": "20%"
+		},
+		{
+			"start": "2:29",
+			"end": "2:32.5",
+			"url": "http://en.wikipedia.org/wiki/Unification_of_Germany",
+			"left": "50%",
+			"top": "39%",
+			"width": "17%"
+		},
+		{
+			"start": "2:49",
+			"end": "2:56",
+			"url": "http://en.wikipedia.org/wiki/Paris_Peace_Conference,_1919",
+			"left": "47%",
+			"top": "60%",
+			"width": "20%"
+		},
+		{
+			"start": "4:26",
+			"end": "4:32",
+			"url": "http://en.wikipedia.org/wiki/Gallipoli_Campaign",
+			"left": "10%",
+			"top": "50%",
+			"width": "20%"
+		}
+	],
+	"flickr": [
+		{
+			"start": 4.12,
+			"end": 12.12,
+			"url": "http://www.flickr.com/photos/europeanaimages2/5578994039/in/set-72157626280347183/",
+			"left": "10%",
+			"top": "10%",
+			"width": "20%"
+		},
+		{
+			"start": 5.62,
+			"end": 13.12,
+			"url": "http://www.flickr.com/photos/europeanaimages2/5579579796/in/set-72157626280347183/",
+			"left": "70%",
+			"top": "10%",
+			"width": "20%"
+		},
+		{
+			"start": 7.12,
+			"end": 14.12,
+			"url": "http://www.flickr.com/photos/europeanaimages2/5579580108/in/set-72157626280347183/",
+			"left": "10%",
+			"top": "40%",
+			"width": "20%"
+		}
+	],
+	"europeana": [
+		{
+			"start": 27,
+			"end": 31,
+			"id": "09405a/1D8918A0B347F1FFE438AFB414F82BCDCDDD7466",
+			"left": "74%",
+			"top": "25%",
+			"width": "20%"
+		},
+		{
+			"start": 65,
+			"end": 68,
+			"id": "92037/D4D1CFEF098AB1B48ED41EFFF0D7B11418EE5657",
+			"left": "78%",
+			"top": "10%",
+			"width": "17%"
+		},
+		{
+			"start": 60.5,
+			"end": 63,
+			"id": "92037/00B48C09BFE231A1F3FCBB7B411A44B7F9C9795D",
+			"left": "10%",
+			"top": "50%",
+			"width": "20%"
+		},
+		{
+			"start": 62,
+			"end": 64.5,
+			"id": "92037/959153E308133483846AF15DF068016717B3EE0D",
+			"left": "32%",
+			"top": "50%",
+			"width": "20%"
+		},
+		{
+			"start": 96,
+			"end": "1:40",
+			"id": "09405a/642B161D432D8EF5BEEEF35B6A9E9173755AEC5B",
+			"left": "75%",
+			"top": "10%",
+			"width": "20%"
+		},
+		{
+			"start": "1:38",
+			"end": "1:46",
+			"id": "15601/AFEE5AC2B87ED71E563FAB1ED5AAB5CEAC5988D5",
+			"left": "15%",
+			"top": "10%",
+			"width": "20%"
+		},
+		{
+			"start": "2:28",
+			"end": "2:32.5",
+			"id": "09405a/23FDC84A9AD2914B4E9DFB714757635111E96601",
+			"left": "75%",
+			"top": "22%",
+			"width": "20%"
+		},
+		{
+			"start": "2:33.8",
+			"end": "2:36.08",
+			"fadeOut": 0,
+			"id": "09405o/344832BF51A63B5E87DB7402AE454F9D96B268E8",
+			"left": "70%",
+			"top": "60%",
+			"width": "20%"
+		},
+		{
+			"start": "3:49",
+			"end": "3:54",
+			"id": "03503/54B2F996E7634450006CD0EE36C5CC77BA457DFA",
+			"left": "10%",
+			"top": "50%",
+			"width": "20%"
+		},
+		{
+			"start": "4:04",
+			"end": "4:12",
+			"id": "09405a/231F89CBF4E47A94E0E05D3899BE9E36092C66FE",
+			"left": "5%",
+			"top": "10%",
+			"width": "20%"
+		},
+		{
+			"start": "4:14",
+			"end": "4:18.5",
+			"id": "09405a/70710B2CC41225888CFEF7009CAA1103E3CC4628",
+			"left": "75%",
+			"top": "@0%",
+			"width": "20%"
+		}
+	],
+	"googlemap": [
+		{
+			"start": 26,
+			"end": 34,
+			"location": "Löbau, DE",
+			"center": "Germany",
+			"zoom": 9,
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"left": "10%",
+			"top": "10%",
+			"width": "20%"
+		},
+		{
+			"start": 61,
+			"end": 67.4,
+			"location": "Oxford, UK",
+			"zoom": 13,
+			"fadeIn": 0.5,
+			"fadeOut": 0,
+			"left": "10%",
+			"top": "10%",
+			"width": "20%"
+		},
+		{
+			"start": "2:33.5",
+			"end": "2:36.08",
+			"location": "Birmingham, UK",
+			"zoom": 13,
+			"fadeIn": 0.5,
+			"fadeOut": 0,
+			"left": "70%",
+			"top": "22%",
+			"width": "20%"
+		},
+		{
+			"start": "3:53",
+			"end": "4:00",
+			"location": "St. Omer, France",
+			"center": "France",
+			"zoom": 8,
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"left": "10%",
+			"top": "10%",
+			"width": "20%"
+		}
+	],
+	"image": [
+		{
+			"start": 8.62,
+			"end": 15.12,
+			"left": "70%",
+			"top": "40%",
+			"width": "20%",
+			"fadeOut": 0,
+			"url": "http://www.europeana1914-1918.eu/attachments/4587/883.4587.original.jpg?1305199362",
+			"link": "http://www.europeana1914-1918.eu/de/contributions/883",
+			"title": "Otto Jäntsch im Auto",
+			"source": "Europeana"
+		},
+		{
+			"start": 51.5,
+			"end": 55,
+			"left": "70%",
+			"top": "50%",
+			"width": "20%",
+			"fadeOut": 0,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8524&DMSCALE=37.50000&DMWIDTH=323&DMHEIGHT=323&DMX=0&DMY=0&DMTEXT=&REC=2&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/8524?CISOBOX=1&REC=2",
+			"title": "Bernard Darley",
+			"source": "Great War Archive"
+		},
+		{
+			"start": 56,
+			"end": 60,
+			"left": "10%",
+			"top": "10%",
+			"width": "20%",
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8533&DMSCALE=40&DMWIDTH=345&DMHEIGHT=345&DMX=0&DMY=0&DMTEXT=&REC=4&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/8533?CISOBOX=1&REC=4",
+			"title": "Margeret Darley (wife of Bernard Darley)",
+			"source": "Great War Archive"
+		},
+		{
+			"start": 80,
+			"end": 83.3,
+			"left": "70%",
+			"top": "10%",
+			"width": "20%",
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=4022&DMSCALE=75.00000&DMWIDTH=600&DMHEIGHT=600&DMX=0&DMY=0&DMTEXT=&REC=10&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/4022?CISOBOX=1&REC=10",
+			"title": "Letter from Albert Bromwich to his wife",
+			"source": "Great War Archive"
+		},
+		{
+			"start": 80,
+			"end": 83.3,
+			"left": "10%",
+			"top": "50%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=4991&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=6&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/4991?CISOBOX=1&REC=6",
+			"title": "Photo of British Aircraft",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "1:42",
+			"end": "1:46",
+			"left": "5%",
+			"top": "42%",
+			"width": "18%",
+			"fadeIn": 0.5,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=5389&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=9&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/5389?CISOBOX=1&REC=9",
+			"title": "Photograph of Rumanian Nurse",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "1:48",
+			"end": "1:54",
+			"left": "70%",
+			"top": "10%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=4701&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=9&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/4701?CISOBOX=1&REC=9",
+			"title": "Photograph of Nurse",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "1:49",
+			"end": "1:54",
+			"left": "70%",
+			"top": "52%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"url": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/VTRLC/06-511502.jpg",
+			"link": "http://www.europeana.eu/portal/record/03903/887AD7AC76FDE5F2607490E036799A33B04668DD.html?start=2&pageId=brd&query=mascotte+toto&view=table&startPage=1",
+			"title": "Autoportrait de Louis Danton",
+			"source": "Culture.fr/collections"
+		},
+		{
+			"start": "2:04",
+			"end": "2:10",
+			"left": "75%",
+			"top": "20%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"url": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/DSL8NH/07-525646.jpg",
+			"link": "http://www.europeana.eu/portal/record/03903/FD09B71529F1F9B9A735332EED2A8D12928FDFFA.html?bt=eo",
+			"title": "Mascotte \"Toto\" du maréchal des Logis Louis Danton",
+			"source": "Europeana/Culture.fr/collections"
+		},
+		{
+			"start": "2:07.5",
+			"end": "2:13",
+			"left": "5%",
+			"top": "20%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"url": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/IL13X7/07-529843.jpg",
+			"link": "http://www.europeana.eu/portal/record/03903/8C10469A68D83D85598BF938E886A94FBF17A1EE.html?query=europeana_uri%3A%22http%3A%2F%2Fwww.europeana.eu%2Fresolve%2Frecord%2F03903%2FFD09B71529F1F9B9A735332EED2A8D12928FDFFA%22&start=1&startPage=1&pageId=brd",
+			"title": "Mascot in field",
+			"source": "Europeana/Culture.fr/collections"
+		},
+		{
+			"start": "2:13",
+			"end": "2:18",
+			"left": "5%",
+			"top": "20%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"url": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/4N0KEZ/06-510761.jpg",
+			"link": "http://www.europeana.eu/portal/record/03903/E1E7E136BD4A9E46D0AD9403A846DB46B4AB574D.html?start=111&pageId=brd&query=europeana_uri%3A%22http%3A%2F%2Fwww.europeana.eu%2Fresolve%2Frecord%2F03903%2FFD09B71529F1F9B9A735332EED2A8D12928FDFFA%22&view=table&startPage=109",
+			"title": "Mascot with gun in trench",
+			"source": "Europeana/Culture.fr/collections"
+		},
+		{
+			"start": "2:15",
+			"end": "2:20",
+			"left": "5%",
+			"top": "50%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"url": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/XDPTBI/06-510766.jpg",
+			"link": "http://www.europeana.eu/portal/record/03903/CC24147FEF64C0EF78E08D5536335A08C5A85B2D.html?start=4&pageId=brd&query=mascotte+toto&view=table&startPage=1",
+			"title": "Mascot in cabin 'Ya Better' with Berthy, Beaudry and Danton",
+			"source": "Europeana/Culture.fr/collections"
+		},
+		{
+			"start": "2:20.5",
+			"end": "2:26",
+			"left": "10%",
+			"top": "20%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"url": "http://www.vads.ac.uk/images/IWMPC/large/IWMPC0508.jpg",
+			"link": "http://www.vads.ac.uk/x-large.php?uid=26008",
+			"title": "German airforce poster: Delka - Deutsche Luftkriegsbeute Ausstellung",
+			"source": "Europeana/Vads"
+		},
+		{
+			"start": "2:20.5",
+			"end": "2:26",
+			"left": "75%",
+			"top": "20%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"url": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/CVCPH3/07-529844.jpg",
+			"link": "http://www.europeana.eu/portal/record/03903/771E5294FD7225C7940DAA8DC432221648B6059A.html?query=europeana_uri%3A%22http%3A%2F%2Fwww.europeana.eu%2Fresolve%2Frecord%2F03903%2FFD09B71529F1F9B9A735332EED2A8D12928FDFFA%22&start=2&startPage=1&pageId=brd&view=table",
+			"title": "Mascot on canon",
+			"source": "Culture.fr/collections"
+		},
+		{
+			"start": "2:22",
+			"end": "2:28",
+			"left": "75%",
+			"top": "60%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0.5,
+			"url": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/GZE9CA/07-531803.jpg",
+			"link": "http://www.europeana.eu/portal/record/03903/75FF170295C2A81DE0E8782215E6759C97E41B39.html?start=7&pageId=brd&query=mascotte+toto&view=table&startPage=1",
+			"title": "Soldier eating with Mascot in field",
+			"source": "Culture.fr/collections"
+		},
+		{
+			"start": "3:00",
+			"end": "3:08",
+			"left": "75%",
+			"top": "10%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8534&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=5&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/8534?CISOBOX=1&REC=5",
+			"title": "Margaret Darley and St Johns Ambulance",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "3:13.5",
+			"end": 196.04,
+			"left": "10%",
+			"top": "10%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8530&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=1&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/document/9613/8530",
+			"title": "Papers detailing act of courage",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "3:13.75",
+			"end": 196.04,
+			"left": "40%",
+			"top": "10%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"fadeOut": 0,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8529&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=3&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/document/9613/8529",
+			"title": "Papers detailing act of courage",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "3:23",
+			"end": "3:29",
+			"left": "75%",
+			"top": "10%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8529&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=3&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/8529?CISOBOX=1&REC=3",
+			"title": "Certificate of Employment, L.A.C. Bernard Darley, R.A.F.",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "3:24",
+			"end": "3:32",
+			"left": "10%",
+			"top": "10%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=9612&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=3&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/9612",
+			"title": "The Matchbox",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "3:32",
+			"end": "3:40",
+			"left": "10%",
+			"top": "50%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=3469&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=8&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/3469?CISOBOX=1&REC=8",
+			"title": "Metal Cigarette Case",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "3:33",
+			"end": "3:40",
+			"left": "70%",
+			"top": "50%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=5491&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=3&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/item/5491?CISOBOX=1&REC=3",
+			"title": "Tobacco Box",
+			"source": "Great War Archive"
+		},
+		{
+			"start": "4:08",
+			"end": "4:14",
+			"left": "75%",
+			"top": "10%",
+			"width": "20%",
+			"fadeIn": 0.5,
+			"url": "http://img7.fold3.com/img/img?id=31150547&width=557&height=421&crop=1384_48_1299_1002&ts=1315297553&h=d0359cc98aa4a581e552cecbb6d93a0c",
+			"link": "http://www.fold3.com/spotlight/13706/the_armistice_signed/",
+			"title": "Times newspaper (London, 1918)",
+			"source": "fold3"
+		}
+	],
+	"words": [
+		{
+			"start": 55,
+			"end": 62,
+			"link": "http://www.ina.fr/video/CPA77050444/le-temps-des-escadrilles-de-1910-a-1918.fr.html",
+			"text": "A flight with a WW1 airplane in 1977 (from \"Le Temps des Escadrilles de 1910 à 1918\")",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 68,
+			"end": 75,
+			"link": "http://www.greatwar.nl/frames/default-music.html",
+			"text": "Music from the Great War",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 88,
+			"end": 94,
+			"link": "http://www.icrc.org/eng/resources/documents/misc/57jqgr.htm",
+			"text": "The International Prisoners-of-War Agency's resource centre",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 88,
+			"end": 96,
+			"link": "http://www.btinternet.com/~prosearch/tomspage19.html",
+			"text": "Researching Prisoners of War of The British Army 1914 - 1919",
+			"bottom": "90px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 94,
+			"end": 100,
+			"link": "http://www.rafmuseum.org.uk/online-exhibitions/lest-we-forget/royal-air-force-today.cfm",
+			"text": "The Royal Air Force Museum online",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 100,
+			"end": 108,
+			"link": "http://www.glasgowstories.com/",
+			"text": "Glasgow Stories",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 114,
+			"end": 127,
+			"link": "http://www.europeana1914-1918.eu/en/browse",
+			"text": "Browse the \"Erster Weltkrieg\" project's archive and editor's picks",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 127,
+			"end": 135,
+			"link": "http://www.europeana1914-1918.eu/en",
+			"text": "Europeana's and the Great War Archive's \"Erster Weltkrieg\" project ",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 130,
+			"end": 135,
+			"link": "http://www.ina.fr/economie-et-societe/vie-sociale/video/AFE00000267/guerre-en-1914.fr.html",
+			"text": "\"Guerre en 1914\" (War in 1914)",
+			"bottom": "90px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 135,
+			"end": 140,
+			"link": "http://www.linternaute.com/histoire/categorie/56/a/1/1/histoire_de_la_premiere_guerre_mondiale.shtml",
+			"text": "French online timeline on WW1",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 188,
+			"end": 195,
+			"link": "http://commons.wikimedia.org/wiki/File:Cassini_St_Omer_For%C3%AAtDeRihoultClairmarais_int%C3%A8gre.jpg",
+			"text": "Historic map of the St. Omer region",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 213,
+			"end": 219,
+			"link": "http://www.youtube.com/watch?v=o98a7Gl7l3o",
+			"text": "Chemins de mémoire de la Grande Guerre en Nord-Pas de Calais",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 223,
+			"end": 229,
+			"link": "http://www.lincstothepast.com/exhibitions/lincolnshire-at-war/trench-art/",
+			"text": "Trench art: souvenirs made by craftsmen in the trenches",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 231,
+			"end": 238,
+			"link": "http://commons.wikimedia.org/wiki/File:The_Grey_Battery_at_St._Omer,_May_1917.jpg",
+			"text": "The Grey Battery at St. Omer, May 1917",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 238,
+			"end": 243,
+			"link": "http://www.videoactive.eu/VideoActive/VideoDetails.do?id=VA_RTBF20080118093538475&sw=first%20world%20war&curitem=5&curpage=0",
+			"text": "1914-1918 - The Battle of the Yser (explained in a tv show 50 years later)",
+			"bottom": "60px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": 240,
+			"end": 246,
+			"link": "http://commons.wikimedia.org/wiki/File:Battle_of_Amiens_Hundred_Days_Offensive.jpg",
+			"text": "Battle of Amiens Hundred Days Offensive",
+			"bottom": "90px",
+			"left": "5%",
+			"linkTarget": "_new"
+		},
+		{
+			"start": "4:02",
+			"end": "4:10",
+			"link": "http://www.timerime.com/en/timeline/736682/World+War+I/",
+			"text": "The Time Rime Timeline",
+			"bottom": "120px",
+			"left": "5%",
+			"linkTarget": "_new"
+		}
+	]
+}
