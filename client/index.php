@@ -261,7 +261,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 								<th><a href="http://www.apple.com/safari/">Safari</a></th>
 								<th><a href="http://ie.microsoft.com/">IE</a></th>
 								<th><a href="http://www.opera.com/download/">Opera</a></th>
-								<th>iPad</th>
+								<th><a href="http://www.apple.com/ios/">iPad</a></th>
 							</tr>
 							<tr>
 								<td>3.6+</td>
@@ -318,7 +318,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 								<th><a href="http://www.apple.com/safari/">Safari</a></th>
 								<th><a href="http://ie.microsoft.com/">IE</a></th>
 								<th><a href="http://www.opera.com/download/">Opera</a></th>
-								<th>iPad</th>
+								<th><a href="http://www.apple.com/ios/">iPad</a></th>
 							</tr>
 							<tr>
 								<td>3.6+</td>
@@ -376,7 +376,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 								<th><a href="http://www.apple.com/safari/">Safari</a></th>
 								<th><a href="http://ie.microsoft.com/">IE</a></th>
 								<th><a href="http://www.opera.com/download/">Opera</a></th>
-								<th>iPad</th>
+								<th><a href="http://www.apple.com/ios/">iPad</a></th>
 							</tr>
 							<tr>
 								<td>3.6+</td>
