@@ -24,7 +24,6 @@ target: 'youtubediv' // mandatory
 	ytFired = false,
 	ytLoaded = false,
 	loadYouTube = function () {
-		// for some reason the Google Map API adds content to the body
 		if (document.body) {
 			ytFired = true;
 			

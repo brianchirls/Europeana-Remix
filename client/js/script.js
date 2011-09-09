@@ -861,7 +861,7 @@
 	}
 
 	function updateLanguage(noServerUpdate) {
-		if (!noServerUpdate) {
+		if (!noServerUpdate && videoEnabled) {
 			loadCommentData();
 		}
 		
@@ -879,19 +879,40 @@
 		}
 
 		//update button text
-		var elements, element, text, node, j, k, max_j, max_k;
+		var elements, element, text, j, k, max_j, max_k;
 		for (i in controlText) {
 			if (controlText.hasOwnProperty(i)) {
-				elements = document.querySelectorAll(i);
+				try {
+					elements = document.querySelectorAll(i);
+				} catch (e) {
+					//this should only happen with ie7/8, so we don't need to be too thorough here
+					elements = document.getElementById(i.substr(1));
+					if (elements) {
+						elements = [elements];
+					} else {
+						elements = [];
+					}
+				}
 				text = (controlText[i][language] || '').split('\n');
 				for (k = 0, max_k = elements.length; k < max_k; k++) {
 					element = elements[k];
 					if (element && text.length && text[0].length) {
-						element.innerHTML = '';
-						element.appendChild(document.createTextNode(text[0]));
-						for (j = 1; j < text.length; j++) {
-							element.appendChild(document.createElement('br'));
-							element.appendChild(document.createTextNode(text[j]));
+						//element.innerHTML = '';
+						while (element.firstChild) {
+							element.removeChild(element.firstChild);
+						}
+
+						try {
+							element.appendChild(document.createTextNode(text[0]));
+							for (j = 1; j < text.length; j++) {
+								element.appendChild(document.createElement('br'));
+								element.appendChild(document.createTextNode(text[j]));
+							}
+						} catch (e) {
+							//stupid IE 7/8 bug
+							if (i === '#title') {
+								document.title = text.join(' ');
+							}
 						}
 					}
 				}
@@ -1015,12 +1036,21 @@
 	}
 	
 	function showHidePage(page) {
+		var youTubeFrame;
+
 		if (page === activePage) {
 			return;
 		}
 		
-		video.pause();
-		hideAllControls();
+		if (videoEnabled) {
+			video.pause();
+			hideAllControls();
+		} else {
+			youTubeFrame = document.getElementById('youtube-container');
+			if (video && video.pauseVideo) {
+				video.pauseVideo();
+			}
+		}
 		
 		window.location.hash = page || '';
 
@@ -1028,6 +1058,10 @@
 			document.getElementById(activePage).style.display = 'none';
 		}
 		if (page) {
+			if (youTubeFrame) {
+				youTubeFrame.style.display = 'none';
+			}
+		
 			if (!activePage) {
 				document.getElementById('back-controls').style.display = 'block';
 				document.getElementById('bottom-controls').style.display = 'none';
@@ -1035,7 +1069,7 @@
 					pageBackground.style.display = 'block';
 				}
 	
-				//todo: close comment window if necessary
+				
 			}
 			document.getElementById(page).style.display = 'block';
 			
@@ -1054,6 +1088,10 @@
 			document.getElementById('bottom-controls').style.display = '';
 			if (pageBackground) {
 				pageBackground.style.display = '';
+			}
+
+			if (youTubeFrame) {
+				youTubeFrame.style.display = '';
 			}
 		}
 	}
@@ -1227,18 +1265,39 @@
 			en: 'With the popcorn.js and HTML5 video technology on board, Europeana Remix is at the vanguard of using audiovisual heritage in engaging people with their history.',
 			de: 'Mit dem Popcorn.js und HTML5-Video-Technologie an Bord, ist Europeana Remix an der Spitze der Nutzung von Online-Video im Dialog mit Menschen mit ihrer Geschichte.'
 		};
+		
+		var yt = document.createElement('script');
+		yt.setAttribute('type', 'text/javascript');
+		yt.src = 'http://www.youtube.com/player_api';
+
+		var ytContainer = document.createElement('div');
+		ytContainer.id = 'youtube-container';
+		ytContainer.style.display = 'none';
+		intro.insertBefore(ytContainer, document.getElementById('intro-text'));
+
+		window.onYouTubePlayerAPIReady = function() {
+			video = new window.YT.Player('youtube-container', {
+				width: 640,
+				height: 320,
+//				width: '55%',
+//				height: '60%',
+				videoId: '8uLOWsWod7c',
+				playerVars: { origin : document.location.protocol+"//"+document.location.hostname }
+			});
+		}
+
+		document.body.appendChild(yt);
+
+		document.getElementById('no-video-continue').onclick = function() {
+			document.getElementById('intro-text').style.display = 'none';
+			ytContainer.style.display = '';
+		};
+
+
+		document.body.classList.add('no-video');
 	}
 
 	function initialize() {
-		//override and fail gracefully if addEventListener is not supported (IE < 9)
-		if (!window.addEventListener ||
-			!Element.prototype.addEventListener) {
-			window.addEventListener =  function(event, callback, blah) {
-				this.attachEvent(event, callback);
-			};
-			document.addEventListener = window.addEventListener;
-			Element.prototype.addEventListener = window.addEventListener;
-		}
 	
 		parseTarget();
 		
@@ -1268,7 +1327,7 @@
 			}
 		}	
 		
-		window.addEventListener('DOMContentLoaded', function() {
+		//window.addEventListener('DOMContentLoaded', function() {
 			resize();
 			
 			if (videoStartTime > INTRO_FADE_TIME) {
@@ -1339,6 +1398,18 @@
 			document.addEventListener('click', function(event) {
 			}, false);
 			
+			document.getElementById('intro-en').addEventListener('click', function() {
+				language = 'en';
+				updateLanguage();
+				saveLanguage();
+			}, false);
+		
+			document.getElementById('intro-de').addEventListener('click', function() {
+				language = 'de';
+				updateLanguage();
+				saveLanguage();
+			}, false);
+					
 			if (videoEnabled) {
 				document.getElementById('comments-button').addEventListener('click', function() {
 					extrasEnabled.comments = !extrasEnabled.comments;
@@ -1381,19 +1452,7 @@
 					saveLanguage();
 				}, false);
 			
-				document.getElementById('intro-en').addEventListener('click', function() {
-					language = 'en';
-					updateLanguage();
-					saveLanguage();
-				}, false);
-			
 				document.getElementById('language-de').addEventListener('click', function() {
-					language = 'de';
-					updateLanguage();
-					saveLanguage();
-				}, false);
-			
-				document.getElementById('intro-de').addEventListener('click', function() {
 					language = 'de';
 					updateLanguage();
 					saveLanguage();
@@ -1613,7 +1672,7 @@
 				opacity: { from: 0, to: 1 }
 			}, 0.5);
 
-		}, false);
+		//}, false);
 	
 		//temp?
 		window.addEventListener('load', function () {

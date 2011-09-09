@@ -103,6 +103,107 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 	<script type="text/javascript">
 	(typeof document !== "undefined" && !("classList" in document.createElement("a"))) && document.write(unescape('%3Cscript src="js/libs/classList.min.js"%3E%3C/script%3E'));
 	</script>
+	<script type="text/javascript">
+	(window.JSON && window.JSON.parse) || document.write(unescape('%3Cscript src="js/libs/json2.min.js"%3E%3C/script%3E'));
+	</script>
+	<script type="text/javascript">
+	
+    if (!Array.prototype.indexOf) {  
+        Array.prototype.indexOf = function (searchElement /*, fromIndex */ ) {  
+            "use strict";  
+            if (this === void 0 || this === null) {  
+                throw new TypeError();  
+            }  
+            var t = Object(this);  
+            var len = t.length >>> 0;  
+            if (len === 0) {  
+                return -1;  
+            }  
+            var n = 0;  
+            if (arguments.length > 0) {  
+                n = Number(arguments[1]);  
+                if (n !== n) { // shortcut for verifying if it's NaN  
+                    n = 0;  
+                } else if (n !== 0 && n !== window.Infinity && n !== -window.Infinity) {  
+                    n = (n > 0 || -1) * Math.floor(Math.abs(n));  
+                }  
+            }  
+            if (n >= len) {  
+                return -1;  
+            }  
+            var k = n >= 0 ? n : Math.max(len - Math.abs(n), 0);  
+            for (; k < len; k++) {  
+                if (k in t && t[k] === searchElement) {  
+                    return k;  
+                }  
+            }  
+            return -1;  
+        }  
+    }
+
+	//override and fail gracefully if addEventListener is not supported (IE < 9)
+	if (!window.addEventListener ||
+		!Element.prototype.addEventListener) {
+		window.addEventListener =  function(event, callback, blah) {
+			this.attachEvent('on' + event, callback);
+		};
+		document.addEventListener = window.addEventListener;
+		
+		if (window.Element) {
+			Element.prototype.addEventListener = window.addEventListener;
+		} else {
+			//classList.js fails here, so let's just fill in what we need
+			function makeClassList(element) {
+				if (element.classList) {
+					return;
+				}
+
+				element.classList = {
+					add: function(c) {
+						var i, s = element.getAttribute('class') || '';
+						s = s.split(' ');
+						i = s.indexOf(c);
+						if (i < 0) {
+							s.push(c)
+							element.setAttribute('class', s.join(' '));
+						}
+					},
+					remove: function(c) {
+						var i, s = element.getAttribute('class') || '';
+						s = s.split(' ');
+						i = s.indexOf(c);
+						if (i >= 0) {
+							s.splice(i, 1);
+							element.setAttribute('class', s.join(' '));
+						}
+					}
+				}
+			};
+		
+			var __createElement = document.createElement;
+			document.createElement = function(tagName) {
+				var element = __createElement.call(document, tagName);
+				if (element) {
+					element.addEventListener = window.addEventListener;
+					makeClassList(element);
+				}
+				return element;
+			}
+		
+			var __getElementById = document.getElementById
+			document.getElementById = function(id) {
+				var element = __getElementById.call(document, id);
+				if (element) {
+					element.addEventListener = window.addEventListener;
+					makeClassList(element);
+				}
+				return element;
+			}
+			
+		}
+	}
+
+	</script>
 	<style type="text/css">
 	
 	html section[lang],
@@ -473,7 +574,13 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 			<a href="http://www.europeana.eu"><img src="image/poweredby.png"/></a>
 		</footer>
 
-	<!-- todo: all these scripts will eventually go in plugins.js -->
+	<script type="text/javascript">
+	
+	if (!document.body.classList) {
+		makeClassList(document.body);
+	}
+	
+	</script>
 <?php
 
 if (DEBUG) {
