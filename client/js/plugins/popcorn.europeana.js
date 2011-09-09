@@ -192,6 +192,9 @@
     	if (req.readyState === 4 && req.status === 200) {
     		var img;
     		var doc = req.responseXML;
+    		if (!doc) {
+    			return;
+    		}
     		var docElement = !doc.ownerDocument ? doc.documentElement : doc.ownerDocument.documentElement;
 
     		var title = doc.evaluate('//dc:title', docElement, resolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
