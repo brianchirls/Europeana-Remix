@@ -234,9 +234,9 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 		<div id="video-frame" role="main">
 			<video id="video" width="1024" preload autobuffer><!-- todo: adjust video height -->
 				<!-- todo: for android, http://www.broken-links.com/2010/07/08/making-html5-video-work-on-android-phones/ -->
-				<source src="video/otto-and-bernard.mp4" type="video/mp4"/>
-				<source src="video/otto-and-bernard.webm" type="video/webm"/>
-				<source src="video/otto-and-bernard.ogv" type="video/ogg"/>
+				<source src="video/otto-and-bernard.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+				<source src="video/otto-and-bernard.webm" type='video/webm; codecs="vp8, vorbis"'/>
+				<source src="video/otto-and-bernard.ogv" type='video/ogg; codecs="theora, vorbis"' />
 				<!-- todo: fall back to flash? -->
 			</video>
 			
