@@ -1246,7 +1246,7 @@
 			} else {
 				intro.style.display = 'none';
 			}
-		} else if (video && video.duration > videoStartTime) {
+		} else if (foundTime && video && video.duration > videoStartTime) {
 			video.currentTime = videoStartTime;
 		}
 	}
