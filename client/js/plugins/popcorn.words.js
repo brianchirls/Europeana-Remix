@@ -10,6 +10,10 @@ todo: animate top, left and other styles (color, font size, etc.)
 
 "use strict";
 
+	if (!Popcorn) {
+		return;
+	}
+
 	var nop = {
 		start: function() {},
 		end: function() {}
@@ -260,4 +264,4 @@ todo: animate top, left and other styles (color, font size, etc.)
 			}*/
 		}
 	});
-})( Popcorn );
+})( window.Popcorn );
