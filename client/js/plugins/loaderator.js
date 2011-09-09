@@ -283,7 +283,7 @@ Loaderator.prototype.loaders = {
 					that.resLoadCallback(resource, this);
 				}
 			} else {
-				console.log('script readystate = ' + this.readyState + ' - ' + resource.fullUrl);
+				//console.log('script readystate = ' + this.readyState + ' - ' + resource.fullUrl);
 			}
 		};
 		resource.element.onload = function() {
@@ -433,10 +433,11 @@ Loaderator.prototype.loaders = {
 
 			obj = resource.element;
 		}
-		if (obj.doMediaEvents) {
+		if (obj.loaded) {
+			that.resLoadCallback(resource, event);
+		} else if (obj.doMediaEvents) {
 			//for now, only firing on canplay.  todo: allow, other events
 			obj.addEventListener('canplay',function(event) {
-			//obj.addEventListener('loadedmetadata',function(event) {
 				if (!resource.loaded) {
 					that.resLoadCallback(resource, event);
 				}
@@ -453,10 +454,10 @@ Loaderator.prototype.loaders = {
 			mode: 'script'
 		},'webfont');
 		_ldr8r_helper.addEventListener('webfont',function() {
-			console.log('Loaded WebFont trying ' + resource.fullUrl);
+			//console.log('Loaded WebFont trying ' + resource.fullUrl);
 			var i;
 			var familiesToLoad = resource.families.concat([]);
-			console.log(familiesToLoad);
+			//console.log(familiesToLoad);
 
 			//only load the css if it hasn't been loaded already
 			var max, link, fullUrl, found = false, urls = [];
@@ -481,7 +482,7 @@ Loaderator.prototype.loaders = {
 					urls: urls
 				},
 				fontactive: function(familyName, fvd) {
-					console.log('fontactive:' + familyName);
+					//console.log('fontactive:' + familyName);
 					for (i = 0; i < familiesToLoad.length; i++) {
 						if (familiesToLoad[i] === familyName) {
 							familiesToLoad.splice(i,1);
@@ -499,7 +500,7 @@ Loaderator.prototype.loaders = {
 					console.log('WebFonts are inactive!');
 				},
 				active: function() {
-					console.log('WebFonts are Active! This is great!');
+					//console.log('WebFonts are Active! This is great!');
 				}
 			});
 		});
@@ -666,7 +667,7 @@ Loaderator.prototype.load = function(resource, category, listener) {
 				if (thisResource.loader) {
 					//todo: use provided loader function
 				} else if (thisResource.fullUrl) {
-					console.log('Loaderator: attempting to load ' + thisResource.fullUrl);
+					//console.log('Loaderator: attempting to load ' + thisResource.fullUrl);
 					if (this.loaders[thisResource.mode].call(this, thisResource)) {
 						returnResources.push(thisResource);
 					}
@@ -692,7 +693,7 @@ Loaderator.prototype.resLoadCallback = function(resource, event) {
 	resource.loaded = true;
 	resource.event = event;
 	var i, len;
-	console.log('Loaded resource: ' + (resource.id || resource.url));
+	//console.log('Loaded resource: ' + (resource.id || resource.url));
 
 	//first run any callbacks registered for all incoming events
 	len = this.eventListeners.length;

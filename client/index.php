@@ -232,12 +232,12 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 	<div id="background"></div>
 	<div id="container">
 		<div id="video-frame" role="main">
-			<video id="video" width="1024" preload autobuffer><!-- todo: adjust video height -->
+			<video id="video" width="1024" preload autobuffer
+				webkit-playsinline onsuspend="this.height = 576; this.loaded = true;">
 				<!-- todo: for android, http://www.broken-links.com/2010/07/08/making-html5-video-work-on-android-phones/ -->
-				<source src="video/otto-and-bernard.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+				<source src="video/otto-and-bernard.mp4" type="video/mp4" />
 				<source src="video/otto-and-bernard.webm" type='video/webm; codecs="vp8, vorbis"'/>
 				<source src="video/otto-and-bernard.ogv" type='video/ogg; codecs="theora, vorbis"' />
-				<!-- todo: fall back to flash? -->
 			</video>
 			
 			<a href="http://www.europeana.eu" target="_new" id="logo-link"><img id="eu-logo" src="image/logo.png" class="fade"/></a>
