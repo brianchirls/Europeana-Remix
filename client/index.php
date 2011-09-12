@@ -233,7 +233,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 	<div id="container">
 		<div id="video-frame" role="main">
 			<video id="video" width="1024" preload autobuffer
-				webkit-playsinline onsuspend="this.height = 576; this.loaded = true;">
+				webkit-playsinline>
 				<!-- todo: for android, http://www.broken-links.com/2010/07/08/making-html5-video-work-on-android-phones/ -->
 				<source src="video/otto-and-bernard.mp4" type="video/mp4" />
 				<source src="video/otto-and-bernard.webm" type='video/webm; codecs="vp8, vorbis"'/>
@@ -617,4 +617,19 @@ foreach ($scripts as $script) {
 	<script> DD_belatedPNG.fix('img, .png_bg');</script>
 	<![endif]-->
 </body>
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25573689-1']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackSocial', 'facebook', 'send', 'remix.europeana.eu']);
+_gaq.push(['_trackSocial', 'twitter', 'tweet', 'remix.europeana.eu']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
 </html>
