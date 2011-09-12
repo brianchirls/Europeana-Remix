@@ -172,8 +172,8 @@
     var req = new XMLHttpRequest();
     req.open('GET', _uri);
     req.onreadystatechange = function(event) {
-    	function resolver(prefix) {
-    		var ns = {
+    	var nsString = '',
+			ns = {
 				srw: 'http://www.loc.gov/zing/srw/',
 				diag: 'http://www.loc.gov/zing/srw/diagnostic/',
 				xcql: 'http://www.loc.gov/zing/cql/xcql/',
@@ -185,10 +185,40 @@
 				dcx: 'http://purl.org/dc/elements/1.1/',
 				tel: 'http://krait.kb.nl/coop/tel/handbook/telterms.html',
 				xsi: 'http://www.w3.org/2001/XMLSchema-instance'
-    		};
-    		
+    		};;
+    	
+    	function resolver(prefix) {
     		return ns[prefix] || null;
     	}
+
+    	function xpath(path, context) {
+    		var doc, result, prefix;
+    		doc = context.ownerDocument || context;
+    		if (doc.evaluate) {
+    			result = doc.evaluate(path, context, resolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+
+    			return result && result.singleNodeValue;
+    		} else {
+    			//internet explorer
+    			doc.setProperty("SelectionLanguage", "XPath");
+    			
+    			if (!nsString) {
+    				nsString = [];
+    				for (prefix in ns) {
+    					nsString.push('xmlns:' + prefix + '="' + ns[prefix] + '"');
+    				}
+    				nsString = nsString.join(' ');
+					doc.setProperty("SelectionNamespaces", nsString);
+    			}
+    			
+    			if (context === doc && doc.documentElement) {
+    				context = doc.documentElement;
+    			}
+    			
+    			return context.selectSingleNode(path);
+    		}
+    	}
+    
     	if (req.readyState === 4 && req.status === 200) {
     		var img;
     		var doc = req.responseXML;
@@ -197,27 +227,27 @@
     		}
     		var docElement = !doc.ownerDocument ? doc.documentElement : doc.ownerDocument.documentElement;
 
-    		var title = doc.evaluate('//dc:title', docElement, resolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-    		if (title && title.singleNodeValue) {
-    			title = title.singleNodeValue.firstChild.nodeValue || '';
+    		var title = xpath('//dc:title', docElement);
+    		if (title) {
+    			title = title.firstChild.nodeValue || '';
     		} else {
     			title = '';
     		}
 
-    		var description = doc.evaluate('//dc:description', docElement, resolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-    		if (description && description.singleNodeValue) {
-    			description = description.singleNodeValue.firstChild.nodeValue || '';
+    		var description = xpath('//dc:description', docElement);
+    		if (description) {
+    			description = description.firstChild.nodeValue || '';
     		} else {
     			description = '';
     		}
     		
-    		var source = doc.evaluate('//dc:source', docElement, resolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-    		if (source && source.singleNodeValue) {
-    			source = source.singleNodeValue.firstChild.nodeValue || '';
+    		var source = xpath('//dc:source', docElement);
+    		if (source) {
+    			source = source.firstChild.nodeValue || '';
     		} else {
-				source = doc.evaluate('//europeana:provider', docElement, resolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-				if (source && source.singleNodeValue) {
-					source = source.singleNodeValue.firstChild.nodeValue || '';
+				source = xpath('//europeana:provider', docElement);
+				if (source) {
+					source = source.firstChild.nodeValue || '';
 				} else {
 					source = '';
 				}
@@ -226,9 +256,9 @@
     			source = '/' + source;
     		}
 
-    		var imagePath = doc.evaluate('//europeana:object', docElement, resolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
-    		if (imagePath && imagePath.singleNodeValue) {
-    			imagePath = imagePath.singleNodeValue.firstChild.nodeValue || '';
+    		var imagePath = xpath('//europeana:object', docElement);
+    		if (imagePath) {
+    			imagePath = imagePath.firstChild.nodeValue || '';
     		} else {
     			imagePath = '';
     		}
