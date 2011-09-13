@@ -308,7 +308,12 @@ target: 'youtubediv' // mandatory
 		_left = options.left;
 				img.addEventListener('load', function() {
 					var re = /(\d*(\.\d*)?)\s*(px|em|\%|em|rem)?/,
-						match, units, width, height;
+						match, units, width, height,
+						imgWidth, imgHeight;
+			
+						imgWidth = img.width || img.naturalWidth;
+						imgHeight = img.height || img.naturalHeight;
+
 					if (options.width && !options.height) {
 						match = re.exec(options.width);
 						if (match && match.length > 1) {
@@ -316,6 +321,11 @@ target: 'youtubediv' // mandatory
 							width = parseFloat(match[1]);
 							height = width * img.height / img.width;
 							contentDiv.style.height = height + units;
+        			
+							//internet explorer 9
+							if (!_image.width) {
+								_image.style.height = 100 * imgHeight / imgWidth + '%';
+							}
 						}
 					}
 					options.loaded = true;

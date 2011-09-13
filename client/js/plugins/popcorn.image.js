@@ -231,7 +231,12 @@ target: 'imagediv' // mandatory
 			_left = options.left;
 			_image.addEventListener('load', function() {
 				var re = /(\d*(\.\d*)?)\s*(px|em|\%|em|rem)?/,
-					match, units, width, height;
+					match, units, width, height,
+					imgWidth, imgHeight;
+		
+					imgWidth = _image.width || _image.naturalWidth;
+					imgHeight = _image.height || _image.naturalHeight;
+
 				if (options.width && !options.height) {
 					match = re.exec(options.width);
 					if (match && match.length > 1) {
@@ -239,6 +244,12 @@ target: 'imagediv' // mandatory
 						width = parseFloat(match[1]);
 						height = width * _image.height / _image.width;
 						contentDiv.style.height = _height = height + units;
+        			
+						//internet explorer 9
+						if (!_image.width) {
+							_image.style.height = 100 * imgHeight / imgWidth + '%';
+						}
+
 					}
 				}
 				options.loaded = true;
