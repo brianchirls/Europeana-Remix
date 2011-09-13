@@ -1303,7 +1303,7 @@
 		
 		window.addEventListener('hashchange', parseTarget, false);
 		
-		if (!Modernizr.video) {
+		if (!Modernizr || !Modernizr.video) {
 			handleNoVideo();
 		} else {
 
@@ -1644,7 +1644,7 @@
 
 				twitterWindow = window.open(
 					tweetUrl,
-					'europeana-share-tweet',
+					'europeanasharetweet',
 					"left=" + Math.round((screen.width/2)-(550/2)) + ",top=" + Math.round((screen.height/2)-(450/2)) + ",width=550,height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1"
 				);
 				
@@ -1661,7 +1661,7 @@
 
 				facebookWindow = window.open(
 					url,
-					'europeana-share-facebook',
+					'europeanasharefacebook',
 					"left=" + Math.round((screen.width/2)-(550/2)) + ",top=" + Math.round((screen.height/2)-(450/2)) + ",width=550,height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1"
 				);
 				
