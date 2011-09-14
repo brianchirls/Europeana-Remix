@@ -1520,18 +1520,33 @@
 					}
 					
 					//save comment to server
-					var formData = new FormData(),
+					var req = new XMLHttpRequest();
+					req.open('POST', 'save-comment.php', true);
+
+					var formData,
 						email = document.getElementById('comment-email').value,
 						name = document.getElementById('comment-name').value,
 						commentText = document.getElementById('comment-text').value;
-					formData.append('language', language);
-					formData.append('name', name);
-					formData.append('email', email);
-					formData.append('comment', commentText);
-					formData.append('time', video.currentTime);
+					if (window.FormData) {
+						formData = new FormData();
+						formData.append('language', language);
+						formData.append('name', name);
+						formData.append('email', email);
+						formData.append('comment', commentText);
+						formData.append('time', video.currentTime);
+					} else {
+						formData = [
+							'language=' + encodeURIComponent(language),
+							'name=' + encodeURIComponent(name),
+							'email=' + encodeURIComponent(email),
+							'comment=' + encodeURIComponent(commentText),
+							'time=' + encodeURIComponent(video.currentTime)
+						].join('&');
+						req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+						req.setRequestHeader("Content-length", formData.length);
+						req.setRequestHeader("Connection", "close");
+					}
 					
-					var req = new XMLHttpRequest();
-					req.open('POST', 'save-comment.php', true);
 					req.send(formData);
 	
 					req.onreadystatechange = function (aEvt) {
