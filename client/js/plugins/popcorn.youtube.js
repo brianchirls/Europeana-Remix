@@ -323,8 +323,8 @@ target: 'youtubediv' // mandatory
 							contentDiv.style.height = height + units;
         			
 							//internet explorer 9
-							if (!_image.width) {
-								_image.style.height = 100 * imgHeight / imgWidth + '%';
+							if (!img.width) {
+								img.style.height = 100 * imgHeight / imgWidth + '%';
 							}
 						}
 					}
