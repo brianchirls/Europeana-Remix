@@ -202,6 +202,12 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 			
 		}
 	}
+	
+	if (!Date.now) {
+		Date.now = function () {
+			return +(new Date());
+		};
+	}
 
 	</script>
 	<style type="text/css">
