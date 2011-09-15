@@ -172,7 +172,7 @@ if(!empty($_POST) && $emailActivation)
 	else
 	{
     ?>
-        <form name="resendActivation" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+        <form name="resendActivation" action="<?php echo SITE_ROOT ?>" method="post">
         
         
         <p>

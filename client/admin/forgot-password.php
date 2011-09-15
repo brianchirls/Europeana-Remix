@@ -242,7 +242,7 @@ if(!empty($_POST))
         ?> 
         
         <div id="regbox">
-            <form name="newLostPass" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+            <form name="newLostPass" action="<?php echo SITE_ROOT ?>" method="post">
             
             <p>
                 <label>Username:</label>
