@@ -90,7 +90,7 @@ if(!empty($_POST))
 
     
             <div id="regbox">
-                <form name="changePass" action="<?php echo SITE_ROOT ?>" method="post">
+                <form name="changePass" action="<?php echo SITE_ROOT ?>/admin/update-email-address.php" method="post">
             
                 <p>
                     <label>Email:</label>

@@ -112,7 +112,7 @@ if(!empty($_POST))
 		
 
     	<div id="regbox">
-            <form name="changePass" action="<?php echo SITE_ROOT ?>" method="post">
+            <form name="changePass" action="<?php echo SITE_ROOT ?>/admin/change-password.php" method="post">
             
                 <p>
                     <label>Password:</label>

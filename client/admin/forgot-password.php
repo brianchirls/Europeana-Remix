@@ -242,7 +242,7 @@ if(!empty($_POST))
         ?> 
         
         <div id="regbox">
-            <form name="newLostPass" action="<?php echo SITE_ROOT ?>" method="post">
+            <form name="newLostPass" action="<?php echo SITE_ROOT ?>/admin/forgot-password.php" method="post">
             
             <p>
                 <label>Username:</label>
