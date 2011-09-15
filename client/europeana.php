@@ -39,10 +39,11 @@ if (file_exists($file_cache_name) &&
 } else {
 	// Get that website's content
 	@$handle = fopen($daurl, "r");
-	@$cache_handle = fopen($file_cache_name, "w");
 	
 	// If there is something, read and return
-	if ($handle) {
+	if ($handle && !feof($handle)) {
+		@$cache_handle = fopen($file_cache_name, "w");
+
 		// Set your return content type
 		header('Content-type: text/xml');
 		header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$expires) . ' GMT');
