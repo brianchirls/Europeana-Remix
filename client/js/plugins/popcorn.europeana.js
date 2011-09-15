@@ -220,7 +220,6 @@
     	}
     
     	if (req.readyState === 4 && req.status === 200) {
-    		var img;
     		var doc = req.responseXML;
     		if (!doc) {
     			return;
@@ -285,12 +284,12 @@
 			contentDiv.appendChild(info);
 	 
 	 		if (imagePath) {
-				img = document.createElement('img');
-				img.src = imagePath;
-				img.onload = function() {
+				_image = document.createElement('_image');
+				_image.src = imagePath;
+				_image.onload = function() {
 					options.loaded = true;
 				};
-				content.insertBefore(img, content.firstChild);
+				content.insertBefore(_image, content.firstChild);
 			} else {
 				options.loaded = true;
 			}
