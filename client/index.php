@@ -628,8 +628,6 @@ foreach ($scripts as $script) {
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-25573689-1']);
 _gaq.push(['_trackPageview']);
-_gaq.push(['_trackSocial', 'facebook', 'send', 'remix.europeana.eu']);
-_gaq.push(['_trackSocial', 'twitter', 'tweet', 'remix.europeana.eu']);
 
 (function() {
 	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

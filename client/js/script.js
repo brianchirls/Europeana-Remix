@@ -1664,6 +1664,9 @@
 				);
 				
 				twitterWindow.focus();
+				
+				//Google Analytics
+				_gaq.push(['_trackSocial', 'twitter', 'tweet', 'remix.europeana.eu']);
 			}, false);
 			
 			document.getElementById('facebook-button').addEventListener('click', function() {
@@ -1681,6 +1684,9 @@
 				);
 				
 				facebookWindow.focus();
+
+				//Google Analytics
+				_gaq.push(['_trackSocial', 'facebook', 'send', 'remix.europeana.eu']);
 			}, false);
 			
 			animateCss('top-controls', {
