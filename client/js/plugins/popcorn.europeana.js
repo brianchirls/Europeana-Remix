@@ -284,7 +284,7 @@
 			contentDiv.appendChild(info);
 	 
 	 		if (imagePath) {
-				_image = document.createElement('_image');
+				_image = document.createElement('img');
 				_image.src = imagePath;
 				_image.onload = function() {
 					options.loaded = true;
@@ -327,7 +327,7 @@
 */
       start: function( event, options ) {
         var isLoaded = function() {
-          if (options.loaded) {
+          if (options.loaded || _image.loaded) {
             containerDiv.style.display = "";
           } else {
             setTimeout(isLoaded, 1);
