@@ -1843,10 +1843,12 @@
 		if (videoEnabled) {
 			loaderator.addEventListener('all:video', function (res) {
 				res.element.style.visibility = 'visible';
-	
+
+				/*
 				if (window.localStorage && localStorage.euRemixVolume !== undefined && !isNaN(localStorage.euRemixVolume) ) {
 					 video.volume = localStorage.euRemixVolume;
 				}
+				*/
 
 				//end screen
 				var end = document.getElementById('end'),
