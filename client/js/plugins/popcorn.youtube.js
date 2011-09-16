@@ -272,15 +272,18 @@ target: 'youtubediv' // mandatory
 			if (ytLoaded) {
 			
 				ytPlayer = new window.YT.Player('ytplayer-' + video.id, {
-				height: 320,
-				width: 240,
-				videoId: video.id,
-				playerVars: { origin : document.location.protocol+"//"+document.location.hostname },
-				events : {
-					onReady: function(blah) {
-					//iframe.style.visibility = 'visible';
+					height: 320,
+					width: 240,
+					videoId: video.id,
+					playerVars: {
+						origin : document.location.protocol+"//"+document.location.hostname,
+						html5: 1
+					},
+					events : {
+						onReady: function(blah) {
+						//iframe.style.visibility = 'visible';
+						}
 					}
-				}
 				});
 			
 			} else {
