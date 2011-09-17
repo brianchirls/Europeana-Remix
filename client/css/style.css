@@ -102,6 +102,7 @@ body {
 	background-color: white;
 	overflow: hidden;
 	font-family: 'Chevin-Light', sans-serif;
+	margin-top: 40px;
 }
 
 #background {
@@ -119,20 +120,17 @@ footer {
 	text-align: center;
 	font-size: 12px;
 	color: black;
-/*	position: fixed;
-	bottom: 0; */
 	margin: 40px auto;
+	opacity: 0.6;
 }
 
 #video-frame {
 	position: relative;
-	width: 100%;
-	min-width: 640px;
-	min-height: 360px;
 	top: 0;
 	left: 0;
-	margin: 0 /*auto*/;
-/*	background-color: white; */
+	width: 960px;
+	height: 540px;
+	margin: auto;
 }
 
 #video-frame > div {
@@ -235,7 +233,7 @@ footer {
 /*	max-width: 67%; */
 /* 	margin: 20% 30%; todo: adjust top in resize() */
 	width: 100%;
-	height: 100%;
+	height: 540px;
 	z-index: 650;
 	background: transparent;
 	
@@ -272,13 +270,13 @@ footer {
 
 .intro h2 {
 	margin: 0 auto;
-	font-size: 6em;
+	font-size: 5em;
 	color: black;
 }
 
 .intro h3 {
 	margin: 2% auto 0;
-	font-size: 2.9em;
+	font-size: 2.3em;
 	font-weight: normal;
 	color: rgb(128, 128, 128);
 	width: 53%;
@@ -300,8 +298,6 @@ footer {
 	border-radius: 8px;
 	
 	cursor: pointer;
-	
-	display: none;
 }
 
 #intro-play:hover {
@@ -311,6 +307,9 @@ footer {
 #intro-play > img {
 	width: 24%;
 	margin: 16% 0 0 42%;
+	display: block;
+	margin: auto;
+	padding-top: 10px;
 }
 
 #intro-en, #intro-de {

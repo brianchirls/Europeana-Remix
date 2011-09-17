@@ -283,7 +283,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 						<!-- http://www.youtube.com/watch?v=8uLOWsWod7c -->
 					</div>
 				</div>
-				<div id="intro-play"><img src="image/intro-play.png"/></div>
+				<div id="intro-play"><img src="image/ajax-loader.gif"/></div>
 				<div id="intro-en" lang="de">English</div>
 				<div id="intro-de" lang="en">Deutsch</div>
 			</div>

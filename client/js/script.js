@@ -545,7 +545,8 @@
 			} else {
 				document.body.style.overflow = '';
 			}
-			
+
+			/*			
 			if (bgOpacity !== opacity) {
 				if (opacity > 0) {
 					if (background.style.display !== 'block') {
@@ -570,6 +571,7 @@
 			videoFrame.style.height = height + 'px';
 			videoFrame.style.marginLeft = left + 'px';
 			videoFrame.style.marginTop = top + 'px';
+			*/
 			
 			if (force || frameWidth !== width) {
 				frameWidth = width;
@@ -1770,8 +1772,9 @@
 				}, 0.5);
 			} else {
 				var playButton = document.getElementById('intro-play');
-				playButton.style.display = 'block';
+				playButton.innerHTML = '<img src="image/intro-play.png"/>';
 				playButton.addEventListener('click', function() {
+					footer.innerHTML = '<a href="http://www.europeana.eu" target="_blank"><img src="image/poweredby-white.png"/></a>';
 					video.play();
 				}, false);
 			}
