@@ -577,7 +577,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 		todo: social media widgets here
 		-->
 			<!-- &copy; 2011 Powered by <a href="http://www.europeana.eu">Europeana</a> -->
-			<a href="http://www.europeana.eu"><img src="image/poweredby.png"/></a>
+			<a href="http://www.europeana.eu" target="_new"><img src="image/poweredby.png"/></a>
 		</footer>
 
 	<script type="text/javascript">
