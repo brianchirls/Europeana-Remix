@@ -267,15 +267,13 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 								<th><a href="http://www.apple.com/safari/">Safari</a></th>
 								<th><a href="http://ie.microsoft.com/">IE</a></th>
 								<th><a href="http://www.opera.com/download/">Opera</a></th>
-								<th><a href="http://www.apple.com/ios/">iPad</a></th>
 							</tr>
 							<tr>
-								<td>3.6+</td>
+								<td>4.0+</td>
 								<td>4.0+</td>
 								<td>4.0+</td>
 								<td>9+</td>
 								<td>10.5+</td>
-								<td>4.0+</td>
 							</tr>
 						</table>
 						<p id="no-video-continue-text">Click 'continue' for the video without the interactive components.</p>
@@ -324,15 +322,13 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 								<th><a href="http://www.apple.com/safari/">Safari</a></th>
 								<th><a href="http://ie.microsoft.com/">IE</a></th>
 								<th><a href="http://www.opera.com/download/">Opera</a></th>
-								<th><a href="http://www.apple.com/ios/">iPad</a></th>
 							</tr>
 							<tr>
-								<td>3.6+</td>
+								<td>4.0+</td>
 								<td>4.0+</td>
 								<td>4.0+</td>
 								<td>9+</td>
 								<td>10.5+</td>
-								<td>4.0+</td>
 							</tr>
 						</table>
 						
@@ -382,15 +378,13 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 								<th><a href="http://www.apple.com/safari/">Safari</a></th>
 								<th><a href="http://ie.microsoft.com/">IE</a></th>
 								<th><a href="http://www.opera.com/download/">Opera</a></th>
-								<th><a href="http://www.apple.com/ios/">iPad</a></th>
 							</tr>
 							<tr>
-								<td>3.6+</td>
+								<td>4.0+</td>
 								<td>4.0+</td>
 								<td>4.0+</td>
 								<td>9+</td>
 								<td>10.5+</td>
-								<td>4.0+</td>
 							</tr>
 						</table>
 						
