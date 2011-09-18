@@ -97,7 +97,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 	}
 	$time = filemtime($style_path);
 
-	echo '<link rel="stylesheet" href="' . $style_path . '"?' . $time . ">\n";
+	echo '<link rel="stylesheet" href="' . $style_path . '?' . $time . "\">\n";
 ?>
 	<script src="js/libs/modernizr-1.7.min.js"></script>
 	<script type="text/javascript">
