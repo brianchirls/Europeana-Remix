@@ -246,7 +246,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 				<source src="video/otto-and-bernard.ogv" type='video/ogg; codecs="theora, vorbis"' />
 			</video>
 			
-			<a href="http://remix.europeana.eu" id="logo-link"><img id="eu-logo" src="image/logo.png" class="fade"/></a>
+			<a href="#about" id="logo-link"><img id="eu-logo" src="image/logo.png" class="fade"/></a>
 
 			<div id="resources"></div>
 

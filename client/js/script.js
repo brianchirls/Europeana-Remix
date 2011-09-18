@@ -1085,7 +1085,9 @@
 		activePage = false;
 
 		if (!activePage) {
-			logo.style.zIndex = '';
+			if (video.currentTime > INTRO_FADE_TIME) {
+				logo.style.zIndex = '';
+			}
 			document.getElementById('back-controls').style.display = '';
 			document.getElementById('bottom-controls').style.display = '';
 			if (pageBackground) {
