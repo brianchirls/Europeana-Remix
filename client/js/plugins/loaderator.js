@@ -442,6 +442,17 @@ Loaderator.prototype.loaders = {
 					that.resLoadCallback(resource, event);
 				}
 			}, true);
+			
+			var checkMedia = function () {
+				if (obj.readyState >= 4) {
+					if (!resource.loaded) {
+						that.resLoadCallback(resource, event);
+					}
+				} else {
+					setTimeout(checkMedia, 0);
+				}
+			};
+			checkMedia();
 		}
 		return true;
 	},
