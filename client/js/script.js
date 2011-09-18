@@ -1262,6 +1262,7 @@
 		videoEnabled = false;
 		videoStartTime = 0;
 		document.getElementById('no-video').style.display = 'block';
+		document.getElementById('intro-play').style.display = 'none';
 		
 		controlText['#intro-caption'] = {
 			en: 'With the popcorn.js and HTML5 video technology on board, Europeana Remix is at the vanguard of using audiovisual heritage in engaging people with their history.',
@@ -1278,13 +1279,15 @@
 		intro.insertBefore(ytContainer, document.getElementById('intro-text'));
 
 		window.onYouTubePlayerAPIReady = function() {
+			var html = navigator.userAgent.match(/iPad/i) ? 1 : 0;
 			video = new window.YT.Player('youtube-container', {
 				width: 640,
 				height: 320,
-//				width: '55%',
-//				height: '60%',
 				videoId: '8uLOWsWod7c',
-				playerVars: { origin : document.location.protocol+"//"+document.location.hostname }
+				playerVars: {
+					origin : document.location.protocol+"//"+document.location.hostname,
+					html5: html5
+				}
 			});
 		}
 
@@ -1305,7 +1308,7 @@
 		
 		window.addEventListener('hashchange', parseTarget, false);
 		
-		if (!Modernizr || !Modernizr.video) {
+		if (!Modernizr || !Modernizr.video || navigator.userAgent.match(/iPad/i) !== null) {
 			handleNoVideo();
 		} else {
 
