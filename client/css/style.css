@@ -103,6 +103,7 @@ body {
 	overflow: hidden;
 	font-family: 'Chevin-Light', sans-serif;
 	margin-top: 40px;
+	font-size: 8px;
 }
 
 #background {
@@ -170,7 +171,7 @@ footer {
 }
 
 .page p {
-	font-size: 1.2em;
+	font-size: 1.8em;
 	line-height: 1.5em;
 	margin-bottom: 1em;
 }
@@ -203,7 +204,7 @@ footer {
 }
 
 .page h3 {
-	font-size: 2.5em;
+	font-size: 3em;
 	color: black;
 	margin: 1em 0 0.5em 0;
 	font-family: 'Chevin-Light', sans-serif;
@@ -270,13 +271,13 @@ footer {
 
 .intro h2 {
 	margin: 0 auto;
-	font-size: 5em;
+	font-size: 4em;
 	color: black;
 }
 
 .intro h3 {
 	margin: 2% auto 0;
-	font-size: 2.3em;
+	font-size: 2.9em;
 	font-weight: normal;
 	color: rgb(128, 128, 128);
 	width: 53%;
@@ -401,7 +402,7 @@ footer {
 }
 
 #play-again {
-	margin-right: 5em;
+	margin-right: 4em;
 	background-color: #00D9B8;
 
 	background-image: -webkit-gradient(
