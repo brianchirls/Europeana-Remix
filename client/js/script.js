@@ -1713,6 +1713,8 @@
 			lastInteractionTime = Date.now();
 			mousePosition = getMousePosition(event);
 		}, false);
+		
+		var cssPath = document.getElementById('main-style').getAttribute('href');
 			
 		var resourcesToLoad = [
 			{
@@ -1721,7 +1723,7 @@
 			},
 			'image/background.jpg',
 			{
-				url: 'css/style.css',
+				url: cssPath,
 				mode: 'font',
 				id: 'chevin',
 				families: ['Chevin-Light'],

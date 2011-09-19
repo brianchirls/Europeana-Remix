@@ -51,6 +51,13 @@ if ($language != 'en' && $language != 'de') {
 	
 }
 
+function cacheBust($path) {
+	$time = filemtime($path);
+	$path = explode('.', $path);
+	array_splice($path, -1, 0, $time);
+	return implode('.', $path);
+}
+
 $sql = "INSERT INTO cookies (cookie_id, language, create_time, load_time) VALUES ('" . mysql_escape_string($cookie_id) . "', '" . mysql_escape_string($language) . "', NOW(), NOW())
 	ON DUPLICATE KEY UPDATE language = '" . mysql_escape_string($language) . "', load_time = NOW()";
 mysql_query($sql);
@@ -95,9 +102,9 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 	} else {
 		$style_path = 'css/style.min.css';
 	}
-	$time = filemtime($style_path);
+	$style_path = cacheBust($style_path);
 
-	echo '<link rel="stylesheet" href="' . $style_path . '?' . $time . "\">\n";
+	echo '<link rel="stylesheet" href="' . $style_path . "\" id=\"main-style\">\n";
 ?>
 	<script src="js/libs/modernizr-1.7.min.js"></script>
 	<script type="text/javascript">
@@ -608,8 +615,9 @@ if (DEBUG) {
 }
 foreach ($scripts as $script) {
 	$time = filemtime($script);
-	//todo: put timestamp before file extension?
-	echo "<script src=\"$script?$time\"></script>\n";
+	//put timestamp before file extension?
+	$script = cacheBust($script);
+	echo "<script src=\"$script\"></script>\n";
 }
 ?>
 	<!--[if lt IE 7 ]>
