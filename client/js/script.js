@@ -1477,6 +1477,8 @@
 					var settings = document.getElementById('settings-controls');
 					var show = !settings.offsetHeight;
 			
+					video.pause();
+		
 					hideAllControls();
 					//toggle
 					if (show) {
@@ -1639,6 +1641,8 @@
 			document.getElementById('help-button').addEventListener('click', function() {
 				var help = document.getElementById('help-controls');
 				var show = !help.offsetHeight;
+				
+				video.pause();
 		
 				hideAllControls();
 				//toggle
@@ -1651,6 +1655,8 @@
 			document.getElementById('share-button').addEventListener('click', function() {
 				var share = document.getElementById('share-controls');
 				var show = !share.offsetHeight;
+		
+				video.pause();
 		
 				hideAllControls();
 				//toggle
