@@ -218,6 +218,35 @@
     			return context.selectSingleNode(path);
     		}
     	}
+    	
+    	function truncate(text, length) {
+    		var i, out = [], remaining = length - 3;
+    		
+    		if (!text) {
+    			return '';
+    		}
+    		
+    		if (text.length <= length) {
+    			return text;
+    		}
+    		
+    		text = text.split(' ');
+    		
+    		if (text[0].length > length) {
+    			return text[0].substr(0, length - 3) + '...';
+    		}
+    		
+    		for (i = 0; i < text.length; i++) {
+    			if (text[i].length <= remaining) {
+
+    				out.push(text[i]);
+    			} else {
+    				return out.join(' ') + '...';
+    			}
+    			remaining -= out[i].length + 1;
+    		}
+    		return out.join(' ');
+    	}
     
     	if (req.readyState === 4 && req.status === 200) {
     		var doc = req.responseXML;
@@ -229,6 +258,7 @@
     		var title = xpath('//dc:title', docElement);
     		if (title) {
     			title = title.firstChild.nodeValue || '';
+    			title = truncate(title, 32);
     		} else {
     			title = '';
     		}
@@ -243,10 +273,12 @@
     		var source = xpath('//dc:source', docElement);
     		if (source) {
     			source = source.firstChild.nodeValue || '';
+    			source = truncate(source, 50);
     		} else {
 				source = xpath('//europeana:provider', docElement);
 				if (source) {
 					source = source.firstChild.nodeValue || '';
+					source = truncate(source, 50);
 				} else {
 					source = '';
 				}
