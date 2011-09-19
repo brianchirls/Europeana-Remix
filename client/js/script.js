@@ -1281,7 +1281,7 @@
 		intro.insertBefore(ytContainer, document.getElementById('intro-text'));
 
 		window.onYouTubePlayerAPIReady = function() {
-			var html = navigator.userAgent.match(/iPad/i) ? 1 : 0;
+			var html5 = navigator.userAgent.match(/iPad/i) ? 1 : 0;
 			video = new window.YT.Player('youtube-container', {
 				width: 640,
 				height: 320,
