@@ -74,6 +74,9 @@
 			'#comment-text-label': { en: 'Comment:', de: 'Kommentar:' },
 			'#comment-tos': { en: 'I agree to terms of use', de: 'Ich stimme den Nutzungsbedingungen zu' },
 			'#comment-post': { en: 'Post My Comment', de: 'absenden' },
+			'#comment-characters-left': { en: 'characters left', de: 'Zeichen übrig' },
+			'#comment-email-invalid': { en: 'not valid', de: 'nicht gültig' },
+			'#comment-cancel': { en: 'cancel', de: 'Abbrechen' },
 
 			'#help-button': { en: 'Help', de: 'Hilfe' },
 			'#help-window > div': { en: 'Use this button:', de: 'Diese taste drücken:' },
@@ -96,6 +99,7 @@
 
 			'shareTwitter': { en: 'Europeana Remix: an interactive video about an unlikely friendship in WW1 http://remix.europeana.eu #europeana', de: 'Europeana Remix: ein interaktives Video über eine ungewöhnliche Freundschaft in den 1. WK http://remix.europeana.eu #europeana' },
 			'shareFacebook': { en: 'Europeana Remix: an interactive video about an unlikely friendship in WW1', de: 'Europeana Remix: ein interaktives Video über eine ungewöhnliche Freundschaft in den 1. WK' }
+			
 		},
 	
 		/* layout data structures */
