@@ -244,7 +244,7 @@ var googleCallback;
 
 		var getImageWhenReady = function() {
 			//holds off on getting this data from the network until this part of the video has loaded
-			if (popcorn.media && popcorn.media.buffered) {
+			if (popcorn.media && popcorn.media.buffered && popcorn.media.buffered.length) {
 				var i, max, loaded = false, start, end, buffered = popcorn.media.buffered;
 				for (i = 0, max = buffered.length; i < max; i++) {
 					start = buffered.start(i);
@@ -317,8 +317,6 @@ var googleCallback;
 
 		};
 		
-		getImageWhenReady();
-
 		var duration = options.end - options.start;
 		if (isNaN(options.fadeIn)) {
 			options.fadeIn = Math.min(0.25, duration / 8);
@@ -347,7 +345,6 @@ var googleCallback;
 		mapdiv.style.position = 'absolute';
 		i++;
 		
-
 		// ensure that google maps and its functions are loaded
 		// before setting up the map parameters
 		isMapReady = function () {
@@ -398,6 +395,8 @@ var googleCallback;
 					}, 5);
 				}
 			};
+
+		getImageWhenReady();
 
 		return {
 			/**

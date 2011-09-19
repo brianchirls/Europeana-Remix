@@ -181,7 +181,7 @@ target: 'imagediv' // mandatory
 
 		var getImageWhenReady = function() {
 			//holds off on getting this data from the network until this part of the video has loaded
-			if (popcorn.media && popcorn.media.buffered) {
+			if (popcorn.media && popcorn.media.buffered && popcorn.media.buffered.length) {
 				var i, max, loaded = false, start, end, buffered = popcorn.media.buffered;
 				for (i = 0, max = buffered.length; i < max; i++) {
 					start = buffered.start(i);
@@ -259,8 +259,6 @@ target: 'imagediv' // mandatory
 
 		};
 		
-		getImageWhenReady();
-
 		var duration = options.end - options.start;
 		if (isNaN(options.fadeIn)) {
 			options.fadeIn = Math.min(0.25, duration / 8);
@@ -273,6 +271,8 @@ target: 'imagediv' // mandatory
 		} else if (options.fadeOut > duration) {
 			options.fadeIn = duration;
 		}
+
+		getImageWhenReady();
 
 		return {
 			start: function( event, options ) {

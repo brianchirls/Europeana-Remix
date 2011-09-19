@@ -94,7 +94,6 @@ target: 'flickrdiv' // mandatory
           return true;
         }
       } while (target = target.parentNode);
-      console.log(event);
       littleWindow();
 
       return false;
@@ -257,7 +256,7 @@ target: 'flickrdiv' // mandatory
     // todo: validate photo id before sending request
     var getFlickrPhoto = function() {
       //holds off on getting this data from the network until this part of the video has loaded
-      if (popcorn.media && popcorn.media.buffered) {
+      if (popcorn.media && popcorn.media.buffered && popcorn.media.buffered.length) {
         var i, max, loaded = false, start, end, buffered = popcorn.media.buffered;
         for (i = 0, max = buffered.length; i < max; i++) {
           start = buffered.start(i);

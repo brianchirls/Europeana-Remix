@@ -224,7 +224,7 @@ target: 'youtubediv' // mandatory
 		// todo: validate id before sending request
 		var getYouTubeData = function() {
 			//holds off on getting this data from the network until this part of the video has loaded
-			if (popcorn.media && popcorn.media.buffered) {
+			if (popcorn.media && popcorn.media.buffered && popcorn.media.buffered.length) {
 				var i, max, loaded = false, start, end, buffered = popcorn.media.buffered;
 				for (i = 0, max = buffered.length; i < max; i++) {
 					start = buffered.start(i);
@@ -346,10 +346,6 @@ target: 'youtubediv' // mandatory
 			}
 		}
 
-		if ( options.videoid ) {
-			getYouTubeData();
-		}
-
 		var duration = options.end - options.start;
 		if (isNaN(options.fadeIn)) {
 			options.fadeIn = Math.min(0.25, duration / 8);
@@ -361,6 +357,10 @@ target: 'youtubediv' // mandatory
 			options.fadeOut = Math.min(0.25, (options.end - options.start) / 8);
 		} else if (options.fadeOut > duration) {
 			options.fadeIn = duration;
+		}
+
+		if ( options.videoid ) {
+			getYouTubeData();
 		}
 
 		return {
