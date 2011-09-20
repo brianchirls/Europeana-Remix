@@ -1089,17 +1089,18 @@
 		activePage = false;
 
 		if (!activePage) {
-			if (video.currentTime > INTRO_FADE_TIME) {
-				logo.style.zIndex = '';
-			}
-			document.getElementById('back-controls').style.display = '';
-			document.getElementById('bottom-controls').style.display = '';
-			if (pageBackground) {
-				pageBackground.style.display = '';
-			}
-
 			if (youTubeFrame) {
 				youTubeFrame.style.display = '';
+			} else {
+				if (video.currentTime > INTRO_FADE_TIME) {
+					logo.style.zIndex = '';
+				}
+				document.getElementById('bottom-controls').style.display = '';
+			}
+
+			document.getElementById('back-controls').style.display = '';
+			if (pageBackground) {
+				pageBackground.style.display = '';
 			}
 		}
 	}
@@ -1275,29 +1276,41 @@
 			de: 'Mit dem Popcorn.js und HTML5-Video-Technologie an Bord, ist Europeana Remix an der Spitze der Nutzung von Online-Video im Dialog mit Menschen mit ihrer Geschichte.'
 		};
 		
-		var yt = document.createElement('script');
-		yt.setAttribute('type', 'text/javascript');
-		yt.src = 'http://www.youtube.com/player_api';
-
+		var yt, html5 = navigator.userAgent.match(/iPad/i) ? 1 : 0;
+		
 		var ytContainer = document.createElement('div');
 		ytContainer.id = 'youtube-container';
 		ytContainer.style.display = 'none';
 		intro.insertBefore(ytContainer, document.getElementById('intro-text'));
 
-		window.onYouTubePlayerAPIReady = function() {
-			var html5 = navigator.userAgent.match(/iPad/i) ? 1 : 0;
-			video = new window.YT.Player('youtube-container', {
-				width: 640,
-				height: 320,
-				videoId: '8uLOWsWod7c',
-				playerVars: {
-					origin : document.location.protocol+"//"+document.location.hostname,
-					html5: html5
-				}
-			});
+		if (!html5 && true) {
+			yt = document.createElement('iframe');
+			yt.setAttribute('width', 640);
+			yt.setAttribute('height', 320);
+			yt.setAttribute('frameborder', 0);
+			yt.setAttribute('allowfullscreen', 1);
+			yt.src = 'http://www.youtube.com/embed/8uLOWsWod7c';
+			ytContainer.appendChild(yt);
+		} else {
+			yt = document.createElement('script');
+			yt.setAttribute('type', 'text/javascript');
+			yt.src = 'http://www.youtube.com/player_api';
+	
+			window.onYouTubePlayerAPIReady = function() {
+				video = new window.YT.Player('youtube-container', {
+					width: 640,
+					height: 320,
+					videoId: '8uLOWsWod7c',
+					playerVars: {
+						origin : document.location.protocol+"//"+document.location.hostname,
+						html5: html5
+					}
+				});
+			}
+
+			document.body.appendChild(yt);
 		}
 
-		document.body.appendChild(yt);
 
 		document.getElementById('no-video-continue').onclick = function() {
 			document.getElementById('intro-text').style.display = 'none';
