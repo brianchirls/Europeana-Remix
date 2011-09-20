@@ -789,6 +789,7 @@
 			video.play();
 		} else {
 			video.pause();
+			paused = true;
 		}
 	}
 
@@ -1096,6 +1097,10 @@
 					logo.style.zIndex = '';
 				}
 				document.getElementById('bottom-controls').style.display = '';
+				
+				if (!paused) {
+					video.play();
+				}
 			}
 
 			document.getElementById('back-controls').style.display = '';
@@ -1385,7 +1390,11 @@
 	
 						played = true;
 					}
+					
+					paused = false;
+
 				}, false);
+
 				video.addEventListener('pause', function () {
 					document.getElementById('play-button').classList.remove('active');
 					lastInteractionTime = Date.now();
@@ -1393,6 +1402,9 @@
 				
 				video.addEventListener('ended', function () {
 					document.getElementById('play-button').classList.remove('active');
+					
+					paused = true;
+
 				}, false);
 				
 				video.addEventListener('volumechange', function () {
@@ -1519,6 +1531,10 @@
 					} else {
 						lastCommentTime = video.currentTime;
 						document.getElementById('add-comment-controls').style.display = 'none';
+
+						if (!paused) {
+							video.play();
+						}
 					}
 				}, false);
 	
@@ -1602,6 +1618,10 @@
 									
 									lastCommentTime = video.currentTime;
 									document.getElementById('add-comment-controls').style.display = 'none';
+
+									if (!paused) {
+										video.play();
+									}
 									document.getElementById('comment-text').value = '';
 								//} else {
 								//todo: report error?
@@ -1628,6 +1648,10 @@
 					commentDialogActive = false;
 					lastCommentTime = video.currentTime;
 					document.getElementById('add-comment-controls').style.display = 'none';
+
+					if (!paused) {
+						video.play();
+					}
 				}, true);
 				
 				document.getElementById('comment-name').addEventListener('change', validateCommentForm, false);
@@ -2006,6 +2030,10 @@
 						lastCommentTime = video.currentTime;
 						document.getElementById('add-comment-controls').style.display = 'none';
 						event.preventDefault();
+
+						if (!paused) {
+							video.play();
+						}
 					}
 				
 					return;
