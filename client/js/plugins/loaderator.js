@@ -434,7 +434,7 @@ Loaderator.prototype.loaders = {
 			obj = resource.element;
 		}
 		if (obj.loaded) {
-			that.resLoadCallback(resource, event);
+			that.resLoadCallback(resource, null);
 		} else if (obj.doMediaEvents) {
 			//for now, only firing on canplay.  todo: allow, other events
 			obj.addEventListener('canplay',function(event) {
@@ -444,9 +444,9 @@ Loaderator.prototype.loaders = {
 			}, true);
 			
 			var checkMedia = function () {
-				if (obj.readyState >= 4) {
+				if (obj.readyState >= 3) {
 					if (!resource.loaded) {
-						that.resLoadCallback(resource, event);
+						that.resLoadCallback(resource, null);
 					}
 				} else {
 					setTimeout(checkMedia, 0);
