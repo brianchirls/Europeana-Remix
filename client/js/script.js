@@ -1496,6 +1496,7 @@
 			
 				document.getElementById('logo-link').addEventListener('click', function() {
 					video.pause();
+					video.currentTime = 0;
 				}, false);
 			
 				document.getElementById('settings-button').addEventListener('click', function() {
