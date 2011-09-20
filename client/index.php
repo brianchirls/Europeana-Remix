@@ -108,7 +108,9 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 ?>
 	<script src="js/libs/modernizr-1.7.min.js"></script>
 	<script type="text/javascript">
-	(typeof document !== "undefined" && !("classList" in document.createElement("a"))) && document.write(unescape('%3Cscript src="js/libs/classList.min.js"%3E%3C/script%3E'));
+	(typeof document !== "undefined" && !("classList" in document.createElement("a"))) && 
+	window.Element && //don't even bother in IE6/7 'cause we won't use this and it crashes anyway
+	document.write(unescape('%3Cscript src="js/libs/classList.min.js"%3E%3C/script%3E'));
 	</script>
 	<script type="text/javascript">
 	(window.JSON && window.JSON.parse) || document.write(unescape('%3Cscript src="js/libs/json2.min.js"%3E%3C/script%3E'));
