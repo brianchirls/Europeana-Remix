@@ -769,12 +769,12 @@ img#eu-logo {
 }
 
 #add-comment-dialog {
-	width: 306px;
+	width: 356px;
 	height: 222px;
 	padding: 4px;
 	
 	position: absolute;
-	margin: -111px 0 0 -153px;
+	margin: -111px 0 0 -178px;
 	top: 50%;
 	left: 50%;
 	background-color: rgba(63, 63, 63, 0.6);
