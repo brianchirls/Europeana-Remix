@@ -737,11 +737,11 @@ img#eu-logo {
 #main-controls {
 	margin-left: 60px;
 }
-/*
-#add-comment-button {
-	background-image: url("../image/comments.png");
+
+#comment-controls {
+	width: 52px;
 }
-*/
+
 #play-button {
 	background-image: url("../image/playpause.png");
 }
