@@ -59,7 +59,7 @@ end: 15, // seconds, mandatory
 		if (navigator && navigator.language === 'en-US') {
 			dateStr = pad(date.getMonth() + 1) + '.' + pad(date.getDate());
 		} else {
-			dateStr = pad(date.getMonth() + 1) + '.' + pad(date.getDate());
+			dateStr = pad(date.getDate() + 1) + '.' + pad(date.getMonth());
 		}
 		if (date.getFullYear() !== (new Date()).getFullYear()) {
 			dateStr += '.' + pad(date.getFullYear());
