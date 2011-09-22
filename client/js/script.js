@@ -1332,7 +1332,7 @@
 		
 		window.addEventListener('hashchange', parseTarget, false);
 		
-		if (!Modernizr || !Modernizr.video || navigator.userAgent.match(/iPad/i) !== null) {
+		if (!window.Modernizr || !Modernizr.video || navigator.userAgent.match(/iPad/i) !== null) {
 			handleNoVideo();
 		} else {
 
