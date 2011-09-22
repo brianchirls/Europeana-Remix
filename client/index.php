@@ -250,7 +250,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 			<video id="video" width="1024" preload autobuffer
 				webkit-playsinline>
 				<!-- todo: for android, http://www.broken-links.com/2010/07/08/making-html5-video-work-on-android-phones/ -->
-				<source src="video/otto-and-bernard-lo.mp4" type="video/mp4" />
+				<source src="video/otto-and-bernard.mp4" type="video/mp4" />
 				<source src="video/otto-and-bernard.webm" type='video/webm; codecs="vp8, vorbis"'/>
 				<source src="video/otto-and-bernard.ogv" type='video/ogg; codecs="theora, vorbis"' />
 			</video>
@@ -585,7 +585,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 
 	<script type="text/javascript">
 	
-	if (!document.body.classList) {
+	if (!document.body.classList && makeClassList) {
 		makeClassList(document.body);
 	}
 	
