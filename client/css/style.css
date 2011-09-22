@@ -1160,9 +1160,10 @@ button#comment-cancel {
 	display: none;
 	font-weight: bold;
 	background-color: rgba(0, 0, 0, 0.5);
+	padding: 3px 6px;
 }
 
-#resources > div.youtube.active:hover .minimize {
+#resources > div.youtube.active .minimize {
 	display: block;
 }
 
