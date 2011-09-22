@@ -1356,398 +1356,390 @@
 			}
 		}	
 		
-		//window.addEventListener('DOMContentLoaded', function() {
-			resize();
-			
-			if (videoStartTime > INTRO_FADE_TIME) {
-				//the popcorn 'code' event that does this is going to be skipped
-				document.body.style.backgroundColor = '#000';
-			}
-
-			/* set up initial language */
-			language = document.documentElement.getAttribute('lang') || 'en';
-			updateLanguage();
-
-			if (videoEnabled) {
-				setUpVolumeBar();
-				setUpLayoutData();
+		resize();
 		
-				/* video events */
-				video.addEventListener('play', function () {
-					document.getElementById('play-button').classList.add('active');
-					lastInteractionTime = Date.now();
-					
-					if (!played) {
-						if (videoStartTime < INTRO_FADE_TIME) {
-							animateCss('bottom-controls', {
-								opacity: { from: 0, to: 1 }
-							}, 0.5);
-						}
-						document.getElementById('intro-play').style.display = 'none';
+		if (videoStartTime > INTRO_FADE_TIME) {
+			//the popcorn 'code' event that does this is going to be skipped
+			document.body.style.backgroundColor = '#000';
+		}
+
+		/* set up initial language */
+		language = document.documentElement.getAttribute('lang') || 'en';
+		updateLanguage();
+
+		if (videoEnabled) {
+			setUpVolumeBar();
+			setUpLayoutData();
 	
-						//just to make sure
-						video.style.display = 'block';
-	
-						played = true;
-					}
-					
-					paused = false;
-
-				}, false);
-
-				video.addEventListener('pause', function () {
-					document.getElementById('play-button').classList.remove('active');
-					lastInteractionTime = Date.now();
-				}, false);
+			/* video events */
+			video.addEventListener('play', function () {
+				document.getElementById('play-button').classList.add('active');
+				lastInteractionTime = Date.now();
 				
-				video.addEventListener('ended', function () {
-					document.getElementById('play-button').classList.remove('active');
-					
-					paused = true;
+				if (!played) {
+					if (videoStartTime < INTRO_FADE_TIME) {
+						animateCss('bottom-controls', {
+							opacity: { from: 0, to: 1 }
+						}, 0.5);
+					}
+					document.getElementById('intro-play').style.display = 'none';
 
-				}, false);
+					//just to make sure
+					video.style.display = 'block';
+
+					played = true;
+				}
 				
-				video.addEventListener('volumechange', function () {
-					//draw volume display
-					if (document.getElementById('volume-button').offsetHeight) {
-						drawVolumeControl();
-					}
-					if (video.volume < 0.05) {
-						document.getElementById('volume-button').classList.add('active');
-					} else {
-						document.getElementById('volume-button').classList.remove('active');
-					}
-					
-					if (window.localStorage) {
-						localStorage.euRemixVolume = video.volume;
-					}
-				}, false);
-			}
+				paused = false;
+
+			}, false);
+
+			video.addEventListener('pause', function () {
+				document.getElementById('play-button').classList.remove('active');
+				lastInteractionTime = Date.now();
+			}, false);
+			
+			video.addEventListener('ended', function () {
+				document.getElementById('play-button').classList.remove('active');
 				
-			/* set up control events */
-			/* todo: make sure this works with touch events as well */
+				paused = true;
+
+			}, false);
+			
+			video.addEventListener('volumechange', function () {
+				//draw volume display
+				if (document.getElementById('volume-button').offsetHeight) {
+					drawVolumeControl();
+				}
+				if (video.volume < 0.05) {
+					document.getElementById('volume-button').classList.add('active');
+				} else {
+					document.getElementById('volume-button').classList.remove('active');
+				}
+				
+				if (window.localStorage) {
+					localStorage.euRemixVolume = video.volume;
+				}
+			}, false);
+
 			video.addEventListener('click', hideAllControls, false);
 			document.getElementById('resources').addEventListener('click', hideAllControls, false);
 			document.getElementById('bottom-controls').addEventListener('click', hideAllControls, false);
-			document.getElementById('top-controls').addEventListener('click', hideAllControls, false);
-			document.getElementById('play-button').addEventListener('click', toggleVideo, false);
-			document.addEventListener('click', function(event) {
+
+			document.getElementById('comments-button').addEventListener('click', function() {
+				extrasEnabled.comments = !extrasEnabled.comments;
+				updateSetting('comments');
+				if (extrasEnabled.comments) {
+					popcorn.enable('videoComment');
+				} else {
+					popcorn.disable('videoComment');
+				}
 			}, false);
 			
-			document.getElementById('intro-en').addEventListener('click', function() {
+			document.getElementById('resources-button').addEventListener('click', function() {
+				var i, max;
+				extrasEnabled.resources = !extrasEnabled.resources;
+				updateSetting('resources');
+				if (extrasEnabled.resources) {
+					for (i = 0, max = resourceTypes.length; i < max; i++) {
+						popcorn.enable(resourceTypes[i]);
+					}
+				} else {
+					for (i = 0, max = resourceTypes.length; i < max; i++) {
+						popcorn.disable(resourceTypes[i]);
+					}
+				}
+			}, false);
+			
+			document.getElementById('subtitles-button').addEventListener('click', function() {
+				extrasEnabled.subtitles = !extrasEnabled.subtitles;
+				updateSetting('subtitles');
+				if (extrasEnabled.subtitles) {
+					popcorn.enable('subtitle');
+				} else {
+					popcorn.disable('subtitle');
+				}
+			}, false);
+
+			document.getElementById('language-en').addEventListener('click', function() {
 				language = 'en';
 				updateLanguage();
 				saveLanguage();
 			}, false);
 		
-			document.getElementById('intro-de').addEventListener('click', function() {
+			document.getElementById('language-de').addEventListener('click', function() {
 				language = 'de';
 				updateLanguage();
 				saveLanguage();
 			}, false);
-					
-			if (videoEnabled) {
-				document.getElementById('comments-button').addEventListener('click', function() {
-					extrasEnabled.comments = !extrasEnabled.comments;
-					updateSetting('comments');
-					if (extrasEnabled.comments) {
-						popcorn.enable('videoComment');
-					} else {
-						popcorn.disable('videoComment');
-					}
-				}, false);
-				
-				document.getElementById('resources-button').addEventListener('click', function() {
-					var i, max;
-					extrasEnabled.resources = !extrasEnabled.resources;
-					updateSetting('resources');
-					if (extrasEnabled.resources) {
-						for (i = 0, max = resourceTypes.length; i < max; i++) {
-							popcorn.enable(resourceTypes[i]);
-						}
-					} else {
-						for (i = 0, max = resourceTypes.length; i < max; i++) {
-							popcorn.disable(resourceTypes[i]);
-						}
-					}
-				}, false);
-				
-				document.getElementById('subtitles-button').addEventListener('click', function() {
-					extrasEnabled.subtitles = !extrasEnabled.subtitles;
-					updateSetting('subtitles');
-					if (extrasEnabled.subtitles) {
-						popcorn.enable('subtitle');
-					} else {
-						popcorn.disable('subtitle');
-					}
-				}, false);
-				
-				document.getElementById('language-en').addEventListener('click', function() {
-					language = 'en';
-					updateLanguage();
-					saveLanguage();
-				}, false);
-			
-				document.getElementById('language-de').addEventListener('click', function() {
-					language = 'de';
-					updateLanguage();
-					saveLanguage();
-				}, false);
-			
-				document.getElementById('logo-link').addEventListener('click', function() {
-					video.pause();
-				}, false);
-			
-				document.getElementById('settings-button').addEventListener('click', function() {
-					var settings = document.getElementById('settings-controls');
-					var show = !settings.offsetHeight;
-			
-					video.pause();
 		
-					hideAllControls();
-					//toggle
-					if (show) {
-						settings.style.display = 'block';
-						popUpsVisible = true;
-					}
-				}, false);
-			
-				document.getElementById('volume-button').addEventListener('click', function() {
-					var vol = document.getElementById('volume-controls');
-					var show = !vol.offsetHeight;
-			
-					hideAllControls();
-					//toggle
-					if (show) {
-						vol.style.display = 'block';
-						drawVolumeControl();
-						popUpsVisible = true;
-					}
-				}, false);
-				document.getElementById('add-comment-button').addEventListener('click', function() {
-					commentDialogActive = !commentDialogActive;
-					if (commentDialogActive) {
-						showCommentDialog();
-					} else {
-						lastCommentTime = video.currentTime;
-						document.getElementById('add-comment-controls').style.display = 'none';
-
-						if (!paused) {
-							video.play();
-						}
-					}
-				}, false);
+			document.getElementById('logo-link').addEventListener('click', function() {
+				video.pause();
+			}, false);
+		
+			document.getElementById('settings-button').addEventListener('click', function() {
+				var settings = document.getElementById('settings-controls');
+				var show = !settings.offsetHeight;
+		
+				video.pause();
 	
-				document.getElementById('comment-tos-checkbox').addEventListener('click', function(event) {
-					/*
-					commentTermsChecked = !commentTermsChecked;
-	
-					if (commentTermsChecked) {
-						this.style.backgroundImage = '';
-					} else {
-						this.style.backgroundImage = 'none';
-					}
-					*/
-					
-					commentTermsChecked = this.checked;
-	
-					validateCommentForm();
-				}, false);
-				commentTermsChecked = document.getElementById('comment-tos-checkbox').checked;
-	
-				document.getElementById('comment-post').addEventListener('click', function() {
-					//todo: validate form
-					if (!commentTermsChecked) {
-						return;
-					}
-					
-					//save comment to server
-					var req = new XMLHttpRequest();
-					req.open('POST', 'save-comment.php', true);
-
-					var formData,
-						email = document.getElementById('comment-email').value,
-						name = document.getElementById('comment-name').value,
-						commentText = document.getElementById('comment-text').value;
-					if (window.FormData) {
-						formData = new FormData();
-						formData.append('language', language);
-						formData.append('name', name);
-						formData.append('email', email);
-						formData.append('comment', commentText);
-						formData.append('time', video.currentTime);
-					} else {
-						formData = [
-							'language=' + encodeURIComponent(language),
-							'name=' + encodeURIComponent(name),
-							'email=' + encodeURIComponent(email),
-							'comment=' + encodeURIComponent(commentText),
-							'time=' + encodeURIComponent(video.currentTime)
-						].join('&');
-						req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-						req.setRequestHeader("Content-length", formData.length);
-						req.setRequestHeader("Connection", "close");
-					}
-					
-					req.send(formData);
-	
-					req.onreadystatechange = function (aEvt) {
-						if (req.readyState === 4) {
-							if(req.status === 200) {
-								//add saved comment to popcorn
-								var response = JSON.parse(req.responseText);
-								if (response.success) {
-									var comment = response.data;
-									//don't add any duplicates
-									if (comment && !commentData[comment[0]]) {
-										commentData[comment[0]] = comment;
-										popcorn.videoComment({
-											start: comment[2],
-											end: comment[2] + 5,
-											id: comment[0],
-											author: comment[4],
-											text: comment[5],
-											date: comment[1] * 1000,
-											language: comment[3],
-											target: 'comments'
-										});	
-									}
-									
-									//hide comment dialog and clear out comment text input
-									commentDialogActive = false;
-									
-									lastCommentTime = video.currentTime;
-									document.getElementById('add-comment-controls').style.display = 'none';
-
-									if (!paused) {
-										video.play();
-									}
-									document.getElementById('comment-text').value = '';
-								//} else {
-								//todo: report error?
-								}
-								
-							} else {
-								console.log('error saving comment');
-							}
-						}
-					};
-	
-				}, false);
-	
-				document.getElementById('end-close').addEventListener('click', function() {
-					document.getElementById('end').style.display = 'none';
-				}, true);
-				
-				document.getElementById('play-again').addEventListener('click', function() {
-					video.currentTime = 0;
-					video.play();
-				}, true);
-				
-				document.getElementById('comment-cancel').addEventListener('click', function() {
-					commentDialogActive = false;
+				hideAllControls();
+				//toggle
+				if (show) {
+					settings.style.display = 'block';
+					popUpsVisible = true;
+				}
+			}, false);
+		
+			document.getElementById('volume-button').addEventListener('click', function() {
+				var vol = document.getElementById('volume-controls');
+				var show = !vol.offsetHeight;
+		
+				hideAllControls();
+				//toggle
+				if (show) {
+					vol.style.display = 'block';
+					drawVolumeControl();
+					popUpsVisible = true;
+				}
+			}, false);
+			document.getElementById('add-comment-button').addEventListener('click', function() {
+				commentDialogActive = !commentDialogActive;
+				if (commentDialogActive) {
+					showCommentDialog();
+				} else {
 					lastCommentTime = video.currentTime;
 					document.getElementById('add-comment-controls').style.display = 'none';
 
 					if (!paused) {
 						video.play();
 					}
-				}, true);
-				
-				document.getElementById('comment-name').addEventListener('change', validateCommentForm, false);
-				document.getElementById('comment-email').addEventListener('change', validateCommentForm, false);
-				document.getElementById('comment-text').addEventListener('change', validateCommentForm, false);
-				document.getElementById('comment-name').addEventListener('keyup', validateCommentForm, false);
-				document.getElementById('comment-email').addEventListener('keyup', validateCommentForm, false);
-				document.getElementById('comment-text').addEventListener('keyup', validateCommentForm, false);
+				}
+			}, false);
 
+			document.getElementById('comment-tos-checkbox').addEventListener('click', function(event) {
+				/*
+				commentTermsChecked = !commentTermsChecked;
+
+				if (commentTermsChecked) {
+					this.style.backgroundImage = '';
+				} else {
+					this.style.backgroundImage = 'none';
+				}
+				*/
+				
+				commentTermsChecked = this.checked;
+
+				validateCommentForm();
+			}, false);
+			commentTermsChecked = document.getElementById('comment-tos-checkbox').checked;
+
+			document.getElementById('comment-post').addEventListener('click', function() {
+				//todo: validate form
+				if (!commentTermsChecked) {
+					return;
+				}
+				
+				//save comment to server
+				var req = new XMLHttpRequest();
+				req.open('POST', 'save-comment.php', true);
+
+				var formData,
+					email = document.getElementById('comment-email').value,
+					name = document.getElementById('comment-name').value,
+					commentText = document.getElementById('comment-text').value;
+				if (window.FormData) {
+					formData = new FormData();
+					formData.append('language', language);
+					formData.append('name', name);
+					formData.append('email', email);
+					formData.append('comment', commentText);
+					formData.append('time', video.currentTime);
+				} else {
+					formData = [
+						'language=' + encodeURIComponent(language),
+						'name=' + encodeURIComponent(name),
+						'email=' + encodeURIComponent(email),
+						'comment=' + encodeURIComponent(commentText),
+						'time=' + encodeURIComponent(video.currentTime)
+					].join('&');
+					req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					req.setRequestHeader("Content-length", formData.length);
+					req.setRequestHeader("Connection", "close");
+				}
+				
+				req.send(formData);
+
+				req.onreadystatechange = function (aEvt) {
+					if (req.readyState === 4) {
+						if(req.status === 200) {
+							//add saved comment to popcorn
+							var response = JSON.parse(req.responseText);
+							if (response.success) {
+								var comment = response.data;
+								//don't add any duplicates
+								if (comment && !commentData[comment[0]]) {
+									commentData[comment[0]] = comment;
+									popcorn.videoComment({
+										start: comment[2],
+										end: comment[2] + 5,
+										id: comment[0],
+										author: comment[4],
+										text: comment[5],
+										date: comment[1] * 1000,
+										language: comment[3],
+										target: 'comments'
+									});	
+								}
+								
+								//hide comment dialog and clear out comment text input
+								commentDialogActive = false;
+								
+								lastCommentTime = video.currentTime;
+								document.getElementById('add-comment-controls').style.display = 'none';
+
+								if (!paused) {
+									video.play();
+								}
+								document.getElementById('comment-text').value = '';
+							//} else {
+							//todo: report error?
+							}
+							
+						} else {
+							console.log('error saving comment');
+						}
+					}
+				};
+
+			}, false);
+
+			document.getElementById('end-close').addEventListener('click', function() {
+				document.getElementById('end').style.display = 'none';
+			}, true);
+			
+			document.getElementById('play-again').addEventListener('click', function() {
+				video.currentTime = 0;
+				video.play();
+			}, true);
+			
+			document.getElementById('comment-cancel').addEventListener('click', function() {
+				commentDialogActive = false;
+				lastCommentTime = video.currentTime;
+				document.getElementById('add-comment-controls').style.display = 'none';
+
+				if (!paused) {
+					video.play();
+				}
+			}, true);
+			
+			document.getElementById('comment-name').addEventListener('change', validateCommentForm, false);
+			document.getElementById('comment-email').addEventListener('change', validateCommentForm, false);
+			document.getElementById('comment-text').addEventListener('change', validateCommentForm, false);
+			document.getElementById('comment-name').addEventListener('keyup', validateCommentForm, false);
+			document.getElementById('comment-email').addEventListener('keyup', validateCommentForm, false);
+			document.getElementById('comment-text').addEventListener('keyup', validateCommentForm, false);
+
+		}
+
+		document.getElementById('top-controls').addEventListener('click', hideAllControls, false);
+		document.getElementById('play-button').addEventListener('click', toggleVideo, false);
+		
+		document.getElementById('intro-en').addEventListener('click', function() {
+			language = 'en';
+			updateLanguage();
+			saveLanguage();
+		}, false);
+	
+		document.getElementById('intro-de').addEventListener('click', function() {
+			language = 'de';
+			updateLanguage();
+			saveLanguage();
+		}, false);
+
+		document.getElementById('about-button').addEventListener('click', function() {
+			showHidePage('about');
+		}, false);
+
+		document.getElementById('contact-button').addEventListener('click', function() {
+			showHidePage('contact');
+		}, false);
+
+		document.getElementById('back-button').addEventListener('click', function() {
+			showHidePage();
+		}, false);
+
+		document.getElementById('help-button').addEventListener('click', function() {
+			var help = document.getElementById('help-controls');
+			var show = !help.offsetHeight;
+			
+			video.pause();
+	
+			hideAllControls();
+			//toggle
+			if (show) {
+				help.style.display = 'block';
+				popUpsVisible = true;
 			}
+		}, false);
 
-			document.getElementById('about-button').addEventListener('click', function() {
-				showHidePage('about');
-			}, false);
+		document.getElementById('share-button').addEventListener('click', function() {
+			var share = document.getElementById('share-controls');
+			var show = !share.offsetHeight;
+	
+			video.pause();
+	
+			hideAllControls();
+			//toggle
+			if (show) {
+				share.style.display = 'block';
+				popUpsVisible = true;
+			}
+		}, false);
 
-			document.getElementById('contact-button').addEventListener('click', function() {
-				showHidePage('contact');
-			}, false);
+		document.getElementById('twitter-button').addEventListener('click', function() {
+			var base = window.location.protocol + '//' + window.location.host + window.location.pathname;
+			var safeUrl = encodeURIComponent(base);
 
-			document.getElementById('back-button').addEventListener('click', function() {
-				showHidePage();
-			}, false);
+			var safeText = encodeURIComponent(controlText.shareTwitter[language]);
 
-			document.getElementById('help-button').addEventListener('click', function() {
-				var help = document.getElementById('help-controls');
-				var show = !help.offsetHeight;
-				
-				video.pause();
-		
-				hideAllControls();
-				//toggle
-				if (show) {
-					help.style.display = 'block';
-					popUpsVisible = true;
-				}
-			}, false);
+			var tweetUrl = 'http://twitter.com/share?count=none&counturl=' + safeUrl + '&text=' + safeText + '&url=';// + safeUrl;
 
-			document.getElementById('share-button').addEventListener('click', function() {
-				var share = document.getElementById('share-controls');
-				var show = !share.offsetHeight;
-		
-				video.pause();
-		
-				hideAllControls();
-				//toggle
-				if (show) {
-					share.style.display = 'block';
-					popUpsVisible = true;
-				}
-			}, false);
-
-			document.getElementById('twitter-button').addEventListener('click', function() {
-				var base = window.location.protocol + '//' + window.location.host + window.location.pathname;
-				var safeUrl = encodeURIComponent(base);
-
-				var safeText = encodeURIComponent(controlText.shareTwitter[language]);
-
-				var tweetUrl = 'http://twitter.com/share?count=none&counturl=' + safeUrl + '&text=' + safeText + '&url=';// + safeUrl;
-
-				twitterWindow = window.open(
-					tweetUrl,
-					'europeanasharetweet',
-					"left=" + Math.round((screen.width/2)-(550/2)) + ",top=" + Math.round((screen.height/2)-(450/2)) + ",width=550,height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1"
-				);
-				
-				twitterWindow.focus();
-				
-				//Google Analytics
-				_gaq.push(['_trackSocial', 'twitter', 'tweet', 'remix.europeana.eu']);
-			}, false);
+			twitterWindow = window.open(
+				tweetUrl,
+				'europeanasharetweet',
+				"left=" + Math.round((screen.width/2)-(550/2)) + ",top=" + Math.round((screen.height/2)-(450/2)) + ",width=550,height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1"
+			);
 			
-			document.getElementById('facebook-button').addEventListener('click', function() {
-				var base = window.location.protocol + '//' + window.location.host + window.location.pathname;
-				var safeUrl = base; //encodeURIComponent(base);
-
-				var safeText = encodeURIComponent(controlText.shareFacebook[language]);
-
-				var url = 'http://facebook.com/sharer.php?u=' + safeUrl + '&t=' + safeText;
-
-				facebookWindow = window.open(
-					url,
-					'europeanasharefacebook',
-					"left=" + Math.round((screen.width/2)-(550/2)) + ",top=" + Math.round((screen.height/2)-(450/2)) + ",width=550,height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1"
-				);
-				
-				facebookWindow.focus();
-
-				//Google Analytics
-				_gaq.push(['_trackSocial', 'facebook', 'send', 'remix.europeana.eu']);
-			}, false);
+			twitterWindow.focus();
 			
-			animateCss('top-controls', {
-				opacity: { from: 0, to: 1 }
-			}, 0.5);
+			//Google Analytics
+			_gaq.push(['_trackSocial', 'twitter', 'tweet', 'remix.europeana.eu']);
+		}, false);
+		
+		document.getElementById('facebook-button').addEventListener('click', function() {
+			var base = window.location.protocol + '//' + window.location.host + window.location.pathname;
+			var safeUrl = base; //encodeURIComponent(base);
 
-		//}, false);
+			var safeText = encodeURIComponent(controlText.shareFacebook[language]);
+
+			var url = 'http://facebook.com/sharer.php?u=' + safeUrl + '&t=' + safeText;
+
+			facebookWindow = window.open(
+				url,
+				'europeanasharefacebook',
+				"left=" + Math.round((screen.width/2)-(550/2)) + ",top=" + Math.round((screen.height/2)-(450/2)) + ",width=550,height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1"
+			);
+			
+			facebookWindow.focus();
+
+			//Google Analytics
+			_gaq.push(['_trackSocial', 'facebook', 'send', 'remix.europeana.eu']);
+		}, false);
+		
+		animateCss('top-controls', {
+			opacity: { from: 0, to: 1 }
+		}, 0.5);
 	
 		//temp?
 		window.addEventListener('load', function () {
