@@ -257,7 +257,7 @@
     		var title = xpath('//dc:title', docElement);
     		if (title) {
     			title = title.firstChild.nodeValue || '';
-    			title = truncate(title, 32);
+    			title = truncate(title, 50);
     		} else {
     			title = '';
     		}
@@ -281,8 +281,8 @@
 				}
     		}
     		if (source) {
-    			source = '/' + source;
-    			source = truncate(source, 50);
+    			source = 'Europeana/' + source;
+    			source = truncate(source, 32);
     		}
 
     		var imagePath = xpath('//europeana:object', docElement);
@@ -306,7 +306,7 @@
 			title = title.replace('<', '&lt;');
 			title = title.replace('>', '&gt;');
 			
-			info.innerHTML = '<div class="media"><span class="hiding minimize" style="float: right; margin-right: 20px;">minimize window</span>image<span class="hiding"> | <span class="popcorn-source">source</span>: <a href="http://www.europeana.eu/portal/record/' + options.id + '.html" target="_new">Europeana' + source + '</a></span></div><div><a href="http://www.europeana.eu/portal/record/' + options.id + '.html" target="_new">' + title + '</a></div><div class="watch">view details</div>';
+			info.innerHTML = '<div class="media"><span class="hiding minimize" style="float: right; margin-right: 20px;">minimize window</span>image<span class="hiding"> | <span class="popcorn-source">source</span>: <a href="http://www.europeana.eu/portal/record/' + options.id + '.html" target="_new">' + source + '</a></span></div><div><a href="http://www.europeana.eu/portal/record/' + options.id + '.html" target="_new">' + title + '</a></div><div class="watch">view details</div>';
 			
 			var minimize = info.getElementsByClassName('minimize').item(0);
 			minimize.addEventListener('click', littleWindow, false);
