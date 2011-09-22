@@ -75,7 +75,6 @@
 					return true;
 				}
 			} while (target = target.parentNode);
-			console.log(event);
 			littleWindow();
 
 			return false;

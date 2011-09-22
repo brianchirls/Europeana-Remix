@@ -110,7 +110,6 @@ target: 'youtubediv' // mandatory
 					return true;
 				}
 			} while (target = target.parentNode);
-			console.log(event);
 			littleWindow();
 
 			return false;
@@ -276,8 +275,9 @@ target: 'youtubediv' // mandatory
 					width: 240,
 					videoId: video.id,
 					playerVars: {
-						origin : document.location.protocol+"//"+document.location.hostname,
-						html5: 1
+						origin: document.location.protocol+"//"+document.location.hostname,
+						html5: 1,
+						wmode: 'opaque'
 					},
 					events : {
 						onReady: function(blah) {
@@ -301,6 +301,7 @@ target: 'youtubediv' // mandatory
 		var minimize = document.createElement('span');
 		minimize.innerHTML = 'minimize window';
 		minimize.setAttribute('class', 'minimize');
+		minimize.style.zIndex = 1500;
 		minimize.addEventListener('click', littleWindow, false);
 		contentDiv.appendChild(minimize);
 

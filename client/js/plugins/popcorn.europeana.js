@@ -59,7 +59,6 @@
           return true;
         }
       } while (target = target.parentNode);
-      console.log(event);
       littleWindow();
 
       return false;
@@ -82,7 +81,7 @@
 
       containerDiv.style.cssText = '';      
 
-      if (_width && 16 / 9 * 0.4 * _image.height / _image.width > 0.8) {
+      if (_image && _width && 16 / 9 * 0.4 * _image.height / _image.width > 0.8) {
       	containerDiv.style.width = _image.width / _image.height * 0.8 * 9/16 * 100 + '%';
       }
 
@@ -273,18 +272,17 @@
     		var source = xpath('//dc:source', docElement);
     		if (source) {
     			source = source.firstChild.nodeValue || '';
-    			source = truncate(source, 50);
     		} else {
 				source = xpath('//europeana:provider', docElement);
 				if (source) {
 					source = source.firstChild.nodeValue || '';
-					source = truncate(source, 50);
 				} else {
 					source = '';
 				}
     		}
     		if (source) {
     			source = '/' + source;
+    			source = truncate(source, 50);
     		}
 
     		var imagePath = xpath('//europeana:object', docElement);

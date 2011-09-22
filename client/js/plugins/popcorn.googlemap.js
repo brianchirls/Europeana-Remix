@@ -127,7 +127,6 @@ var googleCallback;
 					return true;
 				}
 			} while (target = target.parentNode);
-			console.log('otherwindows', event);
 			littleWindow();
 
 			return false;
@@ -371,8 +370,6 @@ var googleCallback;
 								map: options.map, 
 								title: options.location
 							});
-						} else {
-							console.log('cannot get google maps data', status);
 						}
 					});
 				} else {
