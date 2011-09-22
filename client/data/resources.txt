@@ -484,8 +484,8 @@
 			"width": "20%",
 			"fadeIn": 0.5,
 			"fadeOut": 0,
-			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8531&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=1&DMTHUMB=1&DMROTATE=0",
-			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/document/9613/8531",
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8530&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=1&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/document/9613/8530",
 			"title": "Papers detailing act of courage",
 			"source": "Great War Archive"
 		},
@@ -497,8 +497,8 @@
 			"width": "20%",
 			"fadeIn": 0.5,
 			"fadeOut": 0,
-			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8529&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=3&DMTHUMB=1&DMROTATE=0",
-			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/document/9613/8529",
+			"url": "http://www.oucs.ox.ac.uk/ww1lit/db/getimage?CISOROOT=/gwa&CISOPTR=8531&DMSCALE=37.50000&DMWIDTH=400&DMHEIGHT=400&DMX=0&DMY=0&DMTEXT=&REC=1&DMTHUMB=1&DMROTATE=0",
+			"link": "http://www.oucs.ox.ac.uk/ww1lit/gwa/document/9613/8531",
 			"title": "Papers detailing act of courage",
 			"source": "Great War Archive"
 		},
