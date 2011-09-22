@@ -147,6 +147,10 @@ footer {
 	visibility: hidden;
 }
 
+#video:focus {
+	outline-width: 0;
+}
+
 .page {
 	background-color: transparent;
 	display: none;
