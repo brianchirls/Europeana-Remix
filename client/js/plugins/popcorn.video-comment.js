@@ -54,13 +54,7 @@ end: 15, // seconds, mandatory
 		}
 		
 		var dateStr, date = new Date(options.date);
-		//some approximatey trickery to guess the order of the date.
-		//if they're American, give 'em month/day. give everybody else day/month
-		if (navigator && navigator.language === 'en-US') {
-			dateStr = pad(date.getMonth() + 1) + '.' + pad(date.getDate());
-		} else {
-			dateStr = pad(date.getDate() + 1) + '.' + pad(date.getMonth());
-		}
+		dateStr = pad(date.getDate() + 1) + '.' + pad(date.getMonth());
 		if (date.getFullYear() !== (new Date()).getFullYear()) {
 			dateStr += '.' + pad(date.getFullYear());
 		}
