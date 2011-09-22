@@ -54,7 +54,7 @@ end: 15, // seconds, mandatory
 		}
 		
 		var dateStr, date = new Date(options.date);
-		dateStr = pad(date.getDate() + 1) + '.' + pad(date.getMonth());
+		dateStr = pad(date.getDate()) + '.' + pad(date.getMonth() + 1);
 		if (date.getFullYear() !== (new Date()).getFullYear()) {
 			dateStr += '.' + pad(date.getFullYear());
 		}
