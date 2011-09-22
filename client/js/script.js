@@ -1642,7 +1642,7 @@
 
 		}
 
-		document.getElementById('top-controls').addEventListener('click', hideAllControls, false);
+		//document.getElementById('top-controls').addEventListener('click', hideAllControls, false);
 		document.getElementById('play-button').addEventListener('click', toggleVideo, false);
 		
 		document.getElementById('intro-en').addEventListener('click', function() {
@@ -1672,8 +1672,10 @@
 		document.getElementById('help-button').addEventListener('click', function() {
 			var help = document.getElementById('help-controls');
 			var show = !help.offsetHeight;
-			
-			video.pause();
+
+			if (video && video.pause) {
+				video.pause();
+			}
 	
 			hideAllControls();
 			//toggle
@@ -1687,7 +1689,9 @@
 			var share = document.getElementById('share-controls');
 			var show = !share.offsetHeight;
 	
-			video.pause();
+			if (video && video.pause) {
+				video.pause();
+			}
 	
 			hideAllControls();
 			//toggle
