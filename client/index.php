@@ -252,7 +252,7 @@ setcookie('euid', $cookie_id, time() + 60 * 60 * 24 * 180);
 				<!-- todo: for android, http://www.broken-links.com/2010/07/08/making-html5-video-work-on-android-phones/ -->
 				<source src="video/otto-and-bernard-lo.mp4" type="video/mp4" />
 				<source src="video/otto-and-bernard.webm" type='video/webm; codecs="vp8, vorbis"'/>
-				<!--<source src="video/otto-and-bernard.ogv" type='video/ogg; codecs="theora, vorbis"' />-->
+				<source src="video/otto-and-bernard.ogv" type='video/ogg; codecs="theora, vorbis"' />
 			</video>
 			
 			<a href="#about" id="logo-link"><img id="eu-logo" src="image/logo.png" class="fade"/></a>
