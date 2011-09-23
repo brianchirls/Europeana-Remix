@@ -2,6 +2,13 @@
 
 define("DEBUG",false);
 
+//test for Internet Explorer < 8
+$match = preg_match('/MSIE ([1-7]\.)/', $_SERVER['HTTP_USER_AGENT']);
+if ($match) {
+	include('fail.php');
+	exit;
+}
+
 require_once('../db.php');
 
 //Look for cookies for language settings and comments
